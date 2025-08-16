@@ -1,3 +1,17 @@
+// Import all SVG assets
+import dayCloudy from "../images/day/cloudy.svg";
+import dayFog from "../images/day/fog.svg";
+import dayRain from "../images/day/rain.svg";
+import daySnow from "../images/day/snow.svg";
+import dayStorm from "../images/day/storm.svg";
+import daySunny from "../images/day/sunny.svg";
+import nightClearSunny from "../images/night/clear_sunny.svg";
+import nightCloudy from "../images/night/cloudy.svg";
+import nightFog from "../images/night/fog.svg";
+import nightRain from "../images/night/rain.svg";
+import nightSnow from "../images/night/snow.svg";
+import nightStorm from "../images/night/storm.svg";
+
 export const defaultClothingItems = [
   {
     _id: 0,
@@ -39,63 +53,63 @@ export const defaultClothingItems = [
 
 export const weatherOptions = [
   {
-    url: require("../images/day/cloudy.svg").default,
+    url: dayCloudy,
     day: true,
     type: "cloudy",
   },
   {
-    url: require("../images/day/fog.svg").default,
+    url: dayFog,
     day: true,
     type: "fog",
   },
   {
-    url: require("../images/day/rain.svg").default,
+    url: dayRain,
     day: true,
     type: "rain",
   },
   {
-    url: require("../images/day/snow.svg").default,
+    url: daySnow,
     day: true,
     type: "snow",
   },
   {
-    url: require("../images/day/storm.svg").default,
+    url: dayStorm,
     day: true,
     type: "storm",
   },
   {
-    url: require("../images/day/sunny.svg").default,
+    url: daySunny,
     day: true,
     type: "sunny",
   },
   //night options
   {
-    url: require("../images/night/clear_sunny.svg").default,
+    url: nightClearSunny,
     day: false,
     type: "clear_sunny",
   },
   {
-    url: require("../images/night/cloudy.svg").default,
+    url: nightCloudy,
     day: false,
     type: "cloudy",
   },
   {
-    url: require("../images/night/fog.svg").default,
+    url: nightFog,
     day: false,
     type: "fog",
   },
   {
-    url: require("../images/night/rain.svg").default,
+    url: nightRain,
     day: false,
     type: "rain",
   },
   {
-    url: require("../images/night/snow.svg").default,
+    url: nightSnow,
     day: false,
     type: "snow",
   },
   {
-    url: require("../images/night/storm.svg").default,
+    url: nightStorm,
     day: false,
     type: "storm",
   },
@@ -118,6 +132,6 @@ export const userNameProfile = "Joshua Zimmerman";
 // removed and updated 20250718
 //export const BASE_URL = "http://localhost:3001";
 
-export const BASE_URL = process.env.NODE_ENV === "production"
+export const BASE_URL = import.meta.env.MODE === "production"
   ? "https://api.testwtwr.jumpingcrab.com"
   : "http://localhost:3001";
