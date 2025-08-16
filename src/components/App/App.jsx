@@ -4,9 +4,13 @@ import Footer from "../Footer/Footer.jsx";
 import Main from "../Main/Main.jsx";
 import ItemModal from "../ItemModal/ItemModal.jsx";
 import {
-  getForecastWeather,
-  parseWeatherData,
-} from "../../utils/WeatherApi.jsx";
+  searchRecipes,
+  parseRecipeSearchResults,
+  getRandomRecipes,
+  parseRandomRecipeResults
+} from "../../utils/SpoonacularApi.jsx"
+import { defaultRecipes } from "../../utils/config.jsx";
+
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext.jsx";
 import {CurrentUserContext} from "../../contexts/CurrentUserContext.jsx";
 import AddItemModal from "../AddItemModal/AddItemModal.jsx";
@@ -27,11 +31,14 @@ import version from "../../version.jsx";
 function App() {
   logger("App");
 
+  const [recipes, setRecipes] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("chicken");
+  const [selectedCategory, setSelectedCategory] = useState("dinner");
+  const [selectedRecipe, setSelectedRecipe] = useState({});
+
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
-  const [temp, setTemp] = useState(0);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
-  const [cards, setCards] = useState([]);
   const [currentUser, setCurrentUser] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -41,21 +48,38 @@ function App() {
   const [loginError, setLoginError] = useState(false);
 
   useEffect(() => {
-    const token = localStorage.getItem("jwt");
-    if (token) {
-      checkToken(token)
-        .then((userData) => {
-          setCurrentUser(userData);
-          setIsLoggedIn(true);
+    // Load initial recipes instead of weather
+    getRandomRecipes({ tags: selectedCategory, number: 12 })
+        .then(parseRandomRecipeResults)
+        .then((recipeData) => {
+          setRecipes(recipeData);
         })
-        .catch((err) => {
-          console.log(err);
-          localStorage.removeItem("jwt");
+        .catch((error) => {
+          console.error("Error loading recipes:", error);
+          // Fallback to default recipes from config
+          setRecipes(defaultRecipes);
         });
-    }
-  }, []);
+  }, [selectedCategory])
 
   //modal handlers
+  const handleRecipeSearch = (query) => {
+    setSearchQuery(query);
+    searchRecipes(query, {
+      type: selectedCategory,
+      number: 12
+    })
+        .then(parseRecipeSearchResults)
+        .then(setRecipes)
+        .catch(console.error);
+  };
+
+  const handleCategoryFilter = (category) => {
+    setSelectedCategory(category);
+  };
+
+
+
+
   const handleCreateModal = () => {
     setActiveModal("create");
   };
@@ -234,32 +258,6 @@ const onAddItem = (values) => {
   }
 };
 
-useEffect(() => {
-  getForecastWeather()
-    .then((data) => {
-      const temperature = parseWeatherData(data);
-      logger(temperature);
-      if (data.name) {
-        setLocation(data.name);
-      }
-      setTemp(temperature);
-      return getItems();
-    })
-    .then((data) => {
-      if (!Array.isArray(data)) {
-        throw new Error("Invalid item data");
-      }
-      // Sort cards by creation date (newest first)
-      const sortedCards = data.sort((a, b) => {
-        return new Date(b.createdAt) - new Date(a.createdAt);
-      });
-      setCards(sortedCards);
-    })
-    .catch((error) => {
-      console.error("Error fetching data:", error);
-    });
-}, [isLoggedIn]);
-
 
   logger(temp);
   logger(currentTemperatureUnit);
@@ -285,11 +283,11 @@ useEffect(() => {
             path="/"
             element={
               <Main
-                weatherTemp={temp}
-                onSelectedCard={handleSelectedCard}
-                cards={cards}
-                onCardLike={handleCardLike}
-                isLoggedIn={isLoggedIn}
+                  recipes={recipes}
+                  onCardClick={handleSelectedCard}
+                  selectedCategory={selectedCategory}
+                  onCategoryChange={handleCategoryFilter}
+                  onSearch={handleRecipeSearch}
               />
             }
           />
@@ -309,14 +307,14 @@ useEffect(() => {
         />
         </Routes>
         <Footer />
-        {activeModal === "create" && (
+        {activeModal === "create-recipe" && (
           <AddItemModal
             handleCloseModal={handleCloseModal}
-            isOpen={activeModal === "create"}
+            isOpen={activeModal === "create-recipe"}
             onAddItem={onAddItem}
           />
         )}
-        {activeModal === "preview" && (
+        {activeModal === "recipe-detail" && (
           <ItemModal
             selectedCard={selectedCard}
             onClose={handleCloseModal}
