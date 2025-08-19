@@ -37,7 +37,6 @@ function App() {
   const [selectedRecipe, setSelectedRecipe] = useState({});
 
   const [activeModal, setActiveModal] = useState("");
-  const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [currentUser, setCurrentUser] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -59,7 +58,23 @@ function App() {
           // Fallback to default recipes from config
           setRecipes(defaultRecipes);
         });
-  }, [selectedCategory])
+  }, [selectedCategory]);
+
+  // Check for existing JWT token on app load
+  useEffect(() => {
+    const token = localStorage.getItem("jwt");
+    if (token) {
+      checkToken(token)
+        .then((userData) => {
+          setCurrentUser(userData);
+          setIsLoggedIn(true);
+        })
+        .catch((err) => {
+          console.log(err);
+          localStorage.removeItem("jwt");
+        });
+    }
+  }, []);
 
   //modal handlers
   const handleRecipeSearch = (query) => {
@@ -81,7 +96,7 @@ function App() {
 
 
   const handleCreateModal = () => {
-    setActiveModal("create");
+    setActiveModal("create-recipe");
   };
 
   const handleCloseModal = () => {
@@ -90,12 +105,12 @@ function App() {
     setLoginError(false);
   };
 
-  const handleSelectedCard = (card) => {
-    setActiveModal("preview");
-    setSelectedCard(card);
+  const handleSelectedCard = (recipe) => {
+    setActiveModal("recipe-detail");
+    setSelectedRecipe(recipe);
   };
 
-  logger(selectedCard);
+  logger(selectedRecipe);
 
   const handleRegisterModal = () => {
     setActiveModal("register");
@@ -190,23 +205,23 @@ const handleLogin = ({ email, password }) => {
       });
   };
 
-const handleDeleteModal = (card) => {
-  console.log("🔧 Opening delete confirmation for:", card.name);
-  setItemToDelete(card);
+const handleDeleteModal = (recipe) => {
+  console.log("🔧 Opening delete confirmation for:", recipe.title);
+  setItemToDelete(recipe);
   setActiveModal("confirm-delete");
 };
 
   const handleConfirmDelete = () => {
   if (!itemToDelete) return;
 
-  console.log("🔧 Confirming delete for:", itemToDelete.name);
+  console.log("🔧 Confirming delete for:", itemToDelete.title);
 
   deleteItems(itemToDelete._id)
     .then(() => {
-      console.log("✅ Item deleted successfully");
+      console.log("✅ Recipe deleted successfully");
       handleCloseModal();
-      const updatedCards = cards.filter((item) => item._id !== itemToDelete._id);
-      setCards(updatedCards);
+      const updatedRecipes = recipes.filter((item) => item._id !== itemToDelete._id);
+      setRecipes(updatedRecipes);
       setItemToDelete(null);
     })
     .catch((error) => {
@@ -220,7 +235,7 @@ const onAddItem = (values) => {
   addItems(values)
     .then((res) => {
       // Add to front of array (newest first)
-      setCards((prevCards) => [res, ...prevCards]);
+      setRecipes((prevRecipes) => [res, ...prevRecipes]);
       handleCloseModal();
     })
     .catch((error) => {
@@ -236,9 +251,9 @@ const onAddItem = (values) => {
   if (isLiked) {
     // Add like
     addCardLike(id, token)
-      .then((updatedCard) => {
-        setCards((items) =>
-          items.map((item) => (item._id === id ? updatedCard : item))
+      .then((updatedRecipe) => {
+        setRecipes((items) =>
+          items.map((item) => (item._id === id ? updatedRecipe : item))
         );
       })
       .catch((error) => {
@@ -247,9 +262,9 @@ const onAddItem = (values) => {
   } else {
     // Remove like
     removeCardLike(id, token)
-      .then((updatedCard) => {
-        setCards((items) =>
-          items.map((item) => (item._id === id ? updatedCard : item))
+      .then((updatedRecipe) => {
+        setRecipes((items) =>
+          items.map((item) => (item._id === id ? updatedRecipe : item))
         );
       })
       .catch((error) => {
@@ -259,8 +274,8 @@ const onAddItem = (values) => {
 };
 
 
-  logger(temp);
-  logger(currentTemperatureUnit);
+  logger(recipes);
+  logger(selectedCategory);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -299,7 +314,7 @@ const onAddItem = (values) => {
             onCreateModal={handleCreateModal}
             onEditProfile={handleEditProfileModal}
             onSignOut={handleSignOut}
-            cards={cards.filter(item => !item.owner || item.owner === currentUser?._id)} // Include items without owner
+            cards={recipes.filter(item => !item.owner || item.owner === currentUser?._id)} // Include items without owner
             onCardLike={handleCardLike}
           />
           </ProtectedRoute>
@@ -316,10 +331,10 @@ const onAddItem = (values) => {
         )}
         {activeModal === "recipe-detail" && (
           <ItemModal
-            selectedCard={selectedCard}
+            selectedCard={selectedRecipe}
             onClose={handleCloseModal}
             onCardDelete={handleDeleteModal}
-            isOwn={selectedCard.owner === currentUser?._id}
+            isOwn={selectedRecipe.owner === currentUser?._id}
             isLoggedIn={isLoggedIn}
             onCardLike={handleCardLike}
           />
@@ -357,7 +372,7 @@ const onAddItem = (values) => {
             isOpen={activeModal === "confirm-delete"}
             onClose={handleCloseModal}
             onConfirm={handleConfirmDelete}
-            itemName={itemToDelete?.name}
+            itemName={itemToDelete?.title}
           />
         )}
       </CurrentTemperatureUnitContext.Provider>
