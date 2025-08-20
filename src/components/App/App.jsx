@@ -11,7 +11,7 @@ import {
 } from "../../utils/SpoonacularApi.jsx"
 import { defaultRecipes } from "../../utils/config.jsx";
 
-import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext.jsx";
+import { CurrentRecipePreferencesContext } from "../../contexts/CurrentRecipePreferencesContext.jsx";
 import {CurrentUserContext} from "../../contexts/CurrentUserContext.jsx";
 import AddItemModal from "../AddItemModal/AddItemModal.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
@@ -37,13 +37,14 @@ function App() {
   const [selectedRecipe, setSelectedRecipe] = useState({});
 
   const [activeModal, setActiveModal] = useState("");
-  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  const [currentDiet, setCurrentDiet] = useState("");
+  const [currentCuisine, setCurrentCuisine] = useState("");
+  const [maxCookingTime, setMaxCookingTime] = useState(60);
   const [currentUser, setCurrentUser] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [itemToDelete, setItemToDelete] = useState(null);
   const history = useNavigate();
-  const [location, setLocation] = useState('');
   const [loginError, setLoginError] = useState(false);
 
   useEffect(() => {
@@ -124,10 +125,17 @@ function App() {
     setActiveModal("edit-profile");
   };
 
-  //toggle temp yo
-  const handleToggleSwitchChange = () => {
-    if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
-    if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
+  // Recipe preference handlers
+  const handleDietChange = (diet) => {
+    setCurrentDiet(diet);
+  };
+
+  const handleCuisineChange = (cuisine) => {
+    setCurrentCuisine(cuisine);
+  };
+
+  const handleCookingTimeChange = (time) => {
+    setMaxCookingTime(time);
   };
 
   // Authentication handlers
@@ -279,19 +287,23 @@ const onAddItem = (values) => {
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-      <CurrentTemperatureUnitContext.Provider
-        value={{ currentTemperatureUnit, handleToggleSwitchChange }}
+      <CurrentRecipePreferencesContext.Provider
+        value={{ 
+          currentDiet, 
+          currentCuisine, 
+          maxCookingTime, 
+          handleDietChange, 
+          handleCuisineChange, 
+          handleCookingTimeChange 
+        }}
       >
         <Header
           version={version}
           onSignOut={handleSignOut}
-          onToggleSwitchChange={handleToggleSwitchChange}
-          currentTemperatureUnit={currentTemperatureUnit}
           onCreateModal={handleCreateModal}
           onRegisterModal={handleRegisterModal}
           onLoginModal={handleLoginModal}
           isLoggedIn={isLoggedIn}
-          location={location}
         />
         <Routes>
           <Route
@@ -375,7 +387,7 @@ const onAddItem = (values) => {
             itemName={itemToDelete?.title}
           />
         )}
-      </CurrentTemperatureUnitContext.Provider>
+      </CurrentRecipePreferencesContext.Provider>
     </CurrentUserContext.Provider>
   );
 }
