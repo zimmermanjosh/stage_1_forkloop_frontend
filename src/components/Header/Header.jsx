@@ -1,6 +1,6 @@
 import "./Header.css";
 import DateTime from "../DateTime/DateTime.jsx";
-import logoImage from "../../images/dashboard/logo.svg";
+import logoImage from "../../images/dashboard/FL89x40.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch.jsx";
 import logger from "../../utils/logger.jsx";
 import { Link } from "react-router-dom";
