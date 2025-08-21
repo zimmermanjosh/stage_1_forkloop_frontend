@@ -133,6 +133,62 @@ then
 
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser
 
+## Testing & Development Tools
+
+ForkLoop includes comprehensive testing components for API and authentication validation:
+
+### Test Routes
+- **Full Test Dashboard**: [http://localhost:3000/tests](http://localhost:3000/tests)
+- **API Tests Only**: [http://localhost:3000/api-test](http://localhost:3000/api-test) 
+- **Auth Tests Only**: [http://localhost:3000/auth-test](http://localhost:3000/auth-test)
+
+### Browser Console Testing
+Open browser console and run quick tests:
+
+```javascript
+// Quick API connectivity test
+window.testAPI.runQuickTest()
+
+// Test recipe search functionality
+window.testAPI.testSearch('chicken')
+
+// Test random recipe fetching  
+window.testAPI.testRandom('breakfast')
+
+// Test individual recipe details
+window.testAPI.testDetails('715538')
+
+// Run comprehensive API test suite
+window.testAPI.runAllTests()
+```
+
+### Test Features
+- **🧪 API Testing**: Spoonacular integration validation
+  - Recipe search with filters (diet, cuisine, cooking time)
+  - Random recipe fetching by category
+  - Individual recipe detail retrieval
+  - Error handling and fallback testing
+
+- **🔐 Authentication Testing**: User system validation
+  - User registration flow
+  - Login authentication with JWT tokens
+  - Token validation and refresh
+  - Profile update functionality
+  - Complete auth flow testing
+
+- **📊 Visual Results**: Detailed test feedback
+  - Real-time loading states
+  - Error message display
+  - Parsed API response inspection
+  - User-friendly result summaries
+
+### Development Benefits
+- Validate API integration before deployment
+- Test authentication flows thoroughly
+- Debug connection issues quickly  
+- Verify data parsing accuracy
+- Ensure error handling works correctly
+
 ### Setup Spoonacular API
 
 1. Create account at [Spoonacular](https://spoonacular.com/food-api)

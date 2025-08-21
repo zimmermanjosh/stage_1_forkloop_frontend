@@ -24,6 +24,10 @@ import Profile from "../Profile/Profile.jsx";
 import { deleteItems, addItems, getItems, addCardLike, removeCardLike } from "../../utils/api.jsx";
 import { register, login, checkToken, updateUserProfile } from "../../utils/auth.jsx";
 import EditProfileModal from "../EditProfileModal/EditProfileModal.jsx";
+import ApiTest from "../ApiTest/ApiTest.jsx";
+import AuthTest from "../AuthTest/AuthTest.jsx";
+import TestDashboard from "../TestDashboard/TestDashboard.jsx";
+import "../../utils/testHelpers.jsx";
 
 import version from "../../version.jsx";
 
@@ -331,6 +335,18 @@ const onAddItem = (values) => {
           />
           </ProtectedRoute>
           }
+        />
+        <Route 
+          path="/api-test" 
+          element={<ApiTest />} 
+        />
+        <Route 
+          path="/auth-test" 
+          element={<AuthTest />} 
+        />
+        <Route 
+          path="/tests" 
+          element={<TestDashboard />} 
         />
         </Routes>
         <Footer />

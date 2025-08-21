@@ -13,7 +13,7 @@
 .search__section h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 24px;
 }
 
@@ -25,9 +25,9 @@
 }
 
 .category-btn {
-  background: #f9fafb;
-  border: 2px solid #e5e7eb;
-  color: #6b7280;
+  background: var(--background-light);
+  border: 2px solid var(--border-light);
+  color: var(--text-secondary);
   padding: 12px 24px;
   border-radius: 25px;
   font-size: 16px;
@@ -37,20 +37,20 @@
 }
 
 .category-btn:hover {
-  background: #f3f4f6;
-  border-color: #d1d5db;
-  color: #374151;
+  background: var(--background-white);
+  border-color: var(--border-medium);
+  color: var(--text-primary);
 }
 
 .category-btn--active {
-  background: #3b82f6;
-  border-color: #3b82f6;
+  background: var(--primary-color);
+  border-color: var(--primary-color);
   color: white;
 }
 
 .category-btn--active:hover {
-  background: #2563eb;
-  border-color: #2563eb;
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
 }
 
 /* Section headers */
@@ -62,7 +62,7 @@
 .section-header h2 {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-primary);
   margin: 0;
 }
 
