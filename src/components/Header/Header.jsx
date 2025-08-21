@@ -10,8 +10,7 @@ const Header = ({
                   onCreateModal,
                   onRegisterModal,
                   onLoginModal,
-                  isLoggedIn,
-                  onSearch
+                  isLoggedIn
                 }) => {
   logger("!! Header");
 

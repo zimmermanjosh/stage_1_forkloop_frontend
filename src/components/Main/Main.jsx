@@ -3,7 +3,7 @@ import { useMemo } from "react";
 import "./Main.css";
 import logger from "../../utils/logger.jsx";
 
-function Main({ recipes, onCardClick, selectedCategory, onCategoryChange, onSearch }) {
+function Main({ recipes, onCardClick, selectedCategory, onCategoryChange }) {
   logger("Main - Recipes:", recipes);
   logger("Main - Selected Category:", selectedCategory);
 
