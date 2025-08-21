@@ -1,7 +1,6 @@
 import "./Header.css";
 import DateTime from "../DateTime/DateTime.jsx";
-import logoImage from "../../images/dashboard/logo.svg";
-import ToggleSwitch from "../ToggleSwitch/ToggleSwitch.jsx";
+import logoImage from "../../images/dashboard/FL89x40.svg";
 import logger from "../../utils/logger.jsx";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
@@ -12,7 +11,7 @@ const Header = ({
                   onRegisterModal,
                   onLoginModal,
                   isLoggedIn,
-                  location
+                  onSearch
                 }) => {
   logger("!! Header");
 
@@ -40,17 +39,15 @@ const Header = ({
         <div>
           <DateTime />
         </div>
-        <div className="header__location">{location}</div>
       </div>
 
       <div className="header__avatar-logo">
-        <ToggleSwitch />
 
         {isLoggedIn ? (
           <>
             <div>
               <button type="text" onClick={onCreateModal} className="header__button">
-                + Add clothes
+                + Add Recipe
               </button>
             </div>
             <Link to="/profile" className="header__profile-link">

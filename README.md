@@ -1,57 +1,76 @@
-# WTWR (What to Wear?)
+# ForkLoop - Smart Recipe Discovery & Meal Planning
 
 ## About the project
 
-In this sprint, you'll continue working on the “WTWR” web application. Your goal for this iteration is to continue implementing functionality using the React features you've just learned. You will implement the following:
+ForkLoop eliminates "what should I cook?" decision fatigue with personalized recipe recommendations. Built on proven React architecture, this application provides intelligent meal suggestions based on your dietary preferences, cooking skill level, available ingredients, and nutritional goals.
 
-- A temperature unit toggle switch using React context
+**Core Mission:** Transform meal planning from a daily chore into an effortless, personalized experience.
 
-- A profile page route using React Router
+## Key Features
 
-- Form submission using controlled components or refs
+- **Smart Recipe Discovery**: Personalized recommendations using Spoonacular API
+- **Dietary Intelligence**: Filter by preferences, restrictions, and nutritional goals  
+- **Skill-Based Suggestions**: Recipes matched to your cooking experience level
+- **Ingredient-Aware**: Find recipes based on what you already have
+- **Personal Collections**: Save, organize, and rate your favorite recipes
+- **Meal Planning**: Strategic meal prep and planning tools
 
-- You'll also set up a mock server and write some code to make API calls to it. This mock server will mimic the behavior of the back end that you'll start building in Sprint 12.
+## Tech Stack
 
-## Added Features
+- **Frontend**: React 18.2.0 + React Router 6.26.1
+- **Styling**: CSS Modules with BEM methodology
+- **API Integration**: Spoonacular API for recipe data
+- **State Management**: React Context for user preferences
+- **Authentication**: JWT tokens with localStorage
+- **Development**: Create React App with ESLint, Prettier
+- **Deployment**: GitHub Pages + Custom server deployment
 
-- added versioning in console (read from package.json)
-- added feature pull browser info for long and latitude use through project for location and temp
+## Architecture Transformation
 
-## TODO
+Built by strategically transforming proven WTWR architecture:
+- `clothingItem.js → recipe.js`
+- `Weather API → Spoonacular API` 
+- `ItemCard → RecipeCard`
+- `Weather conditions → Meal categories`
+- `Clothing collections → Recipe collections`
 
-- add modal for long, lat input
-- set default long, lat for project
+## Stage 1 Development Focus
 
-## Links
+**Timeline**: 28 days (Frontend + API Integration)
+- ✅ Foundation & branding updates
+- 🔄 Core components (RecipeCard, search, detail views)  
+- 📋 Spoonacular API integration & filtering
+- 📋 Polish, responsive design, deployment
 
-- [Figma Design](https://www.figma.com/file/DTojSwldenF9UPKQZd6RRb/Sprint-10%3A-WTWR)
+### Component Architecture
 
-### Component Structure
+ForkLoop leverages modular React components for recipe discovery and meal planning:
 
-The project includes a components directory with the following components:
+**Core Components:**
+- `RecipeCard` - Individual recipe display and interaction
+- `RecipeDetail` - Comprehensive recipe view with ingredients/instructions  
+- `SearchFilters` - Dietary preferences, cuisine, cooking time filters
+- `RecipeCollection` - Personal saved recipes and meal plans
+- `UserProfile` - Dietary preferences and cooking skill management
 
+**Utility Structure:**
 ```
-├── README.md
-├── package-lock.json
-├── package.json
-├── public
-│   ├── favicon.ico
-│   ├── index.html
-│   ├── logo192.png
-│   ├── logo512.png
-│   ├── manifest.json
-│   └── robots.txt
-├── se_project_react.code-workspace
-└── src
-    ├── components
-    ├── images
-    ├── index.css
-    ├── index.jsx
-    ├── reportWebVitals.js
-    ├── setupTests.js
-    ├── utils
-    └── vendor
+src/
+├── components/           # React components
+│   ├── App/             # Main application logic
+│   ├── RecipeCard/      # Recipe display components
+│   ├── Header/          # Navigation and branding
+│   └── Profile/         # User management
+├── contexts/            # React context providers
+├── utils/               # API utilities (Spoonacular, auth)
+├── images/              # Assets and icons
+└── vendor/              # Third-party resources
 ```
+
+**API Integration:**
+- `src/utils/SpoonacularApi.jsx` - Recipe data and search
+- `src/utils/auth.jsx` - User authentication
+- `src/utils/config.jsx` - Environment configuration
 
 ## software to install
 
@@ -114,25 +133,95 @@ then
 
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser
 
-### install server - (json-server)
+## Testing & Development Tools
 
+ForkLoop includes comprehensive testing components for API and authentication validation:
+
+### Test Routes
+- **Full Test Dashboard**: [http://localhost:3000/tests](http://localhost:3000/tests)
+- **API Tests Only**: [http://localhost:3000/api-test](http://localhost:3000/api-test) 
+- **Auth Tests Only**: [http://localhost:3000/auth-test](http://localhost:3000/auth-test)
+
+### Browser Console Testing
+Open browser console and run quick tests:
+
+```javascript
+// Quick API connectivity test
+window.testAPI.runQuickTest()
+
+// Test recipe search functionality
+window.testAPI.testSearch('chicken')
+
+// Test random recipe fetching  
+window.testAPI.testRandom('breakfast')
+
+// Test individual recipe details
+window.testAPI.testDetails('715538')
+
+// Run comprehensive API test suite
+window.testAPI.runAllTests()
+```
+
+### Test Features
+- **🧪 API Testing**: Spoonacular integration validation
+  - Recipe search with filters (diet, cuisine, cooking time)
+  - Random recipe fetching by category
+  - Individual recipe detail retrieval
+  - Error handling and fallback testing
+
+- **🔐 Authentication Testing**: User system validation
+  - User registration flow
+  - Login authentication with JWT tokens
+  - Token validation and refresh
+  - Profile update functionality
+  - Complete auth flow testing
+
+- **📊 Visual Results**: Detailed test feedback
+  - Real-time loading states
+  - Error message display
+  - Parsed API response inspection
+  - User-friendly result summaries
+
+### Development Benefits
+- Validate API integration before deployment
+- Test authentication flows thoroughly
+- Debug connection issues quickly  
+- Verify data parsing accuracy
+- Ensure error handling works correctly
+
+### Setup Spoonacular API
+
+1. Create account at [Spoonacular](https://spoonacular.com/food-api)
+2. Get your API key (150 requests/day free tier)
+3. Add API key to environment configuration
+
+### Development Server (Optional)
+
+For local development with mock data:
 `npm install -g json-server@^0`
 
 - copy 'mockdb/mockdb.json' to root as `db.json`
+- run: `json-server --watch db.json --id \_id --port 3001`
 
-### run server ( as local)
+## Project Timeline & Updates
 
-- json-server --watch db.json --id \_id --port 3001
+### Stage 1: Frontend + API Integration (28 days)
+**Target Completion:** 7 days early (Day 21)
 
-## Updates
+### Development Milestones
+- **Week 1:** ✅ Foundation & branding transformation
+- **Week 2:** 🔄 Core recipe components & Spoonacular integration
+- **Week 3:** 📋 Advanced filtering & user preferences  
+- **Week 4:** 📋 Polish, responsive design, deployment
 
-### 2025 05 13 
-  - add to github pages 
+### Success Metrics
+- Responsive design (320px+ no horizontal scroll)
+- BEM CSS methodology compliance
+- React hooks implementation
+- Fetch API integration (no third-party request libraries)
+- Spoonacular API integration (150 req/day limit)
 
-### 2025 05 10 
-
-    - GITHUB Resources
-
-Front End: [https://github.com/zimmermanjosh/se_project_react]
-
-Back End:  [https://github.com/zimmermanjosh/se_project_express]
+### Repository Resources
+- **Frontend**: [https://github.com/zimmermanjosh/se_project_react]
+- **Backend** (Stage 2): [https://github.com/zimmermanjosh/se_project_express]
+- **Live Demo**: Coming in Stage 1 completion

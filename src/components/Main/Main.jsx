@@ -1,67 +1,62 @@
 import ItemCard from "../ItemCard/ItemCard.jsx";
-import WeatherCard from "../Weather/WeatherCard.jsx";
 import { useMemo } from "react";
 import "./Main.css";
 import logger from "../../utils/logger.jsx";
-import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext.jsx";
-import { useContext } from "react";
 
-function Main({ weatherTemp, onSelectedCard, cards, onCardLike, isLoggedIn }) {
-  // console.log("weatherTemp in Main:", weatherTemp);
-  logger("Main");
-  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
-  logger(currentTemperatureUnit);
-  const tempF = weatherTemp?.temperature?.[currentTemperatureUnit] || 999;
+function Main({ recipes, onCardClick, selectedCategory, onCategoryChange, onSearch }) {
+  logger("Main - Recipes:", recipes);
+  logger("Main - Selected Category:", selectedCategory);
 
-  const weatherType = useMemo(() => {
-    if (tempF >= 86) {
-      return "hot";
-    } else if (tempF >= 66 && tempF <= 85) {
-      return "warm";
-    } else if (tempF <= 65) {
-      return "cold";
+  // Filter recipes by selected category
+  const filteredRecipes = useMemo(() => {
+    if (!recipes || !Array.isArray(recipes)) {
+      return [];
     }
-  }, [weatherTemp]);
+    return recipes.filter((recipe) => {
+      return recipe.category.toLowerCase() === selectedCategory.toLowerCase();
+    });
+  }, [recipes, selectedCategory]);
 
-  logger(weatherType);
-
-  const filteredCards = cards.filter((item) => {
-    return item.weather.toLowerCase() === weatherType;
-  });
-
-  logger(filteredCards);
+  logger("Filtered Recipes:", filteredRecipes);
 
   return (
     <main className="main">
-      {weatherTemp ? (
-      <WeatherCard day={true} type="cloudy" weatherTemp={tempF} />
-      ) : (
-        <div className="weather-placeholder">
-          {isLoggedIn ? "Loading weather data..." : "Log in to see the weather"}
+      <section className="search__section">
+        <h1>Discover Delicious Recipes</h1>
+        <div className="category-filters">
+          {["breakfast", "lunch", "dinner", "snack"].map((category) => (
+            <button
+              key={category}
+              className={`category-btn ${selectedCategory === category ? "category-btn--active" : ""}`}
+              onClick={() => onCategoryChange(category)}
+            >
+              {category.charAt(0).toUpperCase() + category.slice(1)}
+            </button>
+          ))}
         </div>
-      )}
+      </section>
+      
       <section className="card__section" id="card-section">
-        {weatherTemp ? (
-          <>
-        Today is {tempF}° {currentTemperatureUnit}/ You may want to wear:
-            <div className="card__items">
-              {filteredCards.length > 0 ? (
-                filteredCards.map((item) => (
-                  <ItemCard
-                    key={item._id}
-                    item={item}
-                    onSelectedCard={onSelectedCard}
-                    onCardLike={onCardLike}
-                  />
-            ))
-            ) : (
-            <p>No items found for this weather</p>
-            )}
+        <div className="section-header">
+          <h2>
+            {selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)} Recipes
+            {filteredRecipes.length > 0 && ` (${filteredRecipes.length})`}
+          </h2>
         </div>
-          </>
-        ) : (
-          <p>{isLoggedIn ? "Loading items..." : "Log in to see clothing recommendations"}</p>
-        )}
+        
+        <div className="card__items">
+          {filteredRecipes.length > 0 ? (
+            filteredRecipes.map((recipe) => (
+              <ItemCard
+                key={recipe._id}
+                item={recipe}
+                onSelectedCard={onCardClick}
+              />
+            ))
+          ) : (
+            <p>No {selectedCategory} recipes found. Try a different category!</p>
+          )}
+        </div>
       </section>
     </main>
   );

@@ -1,0 +1,201 @@
+.auth-test {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: var(--font-family);
+  background: var(--background-white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+}
+
+.auth-test h2 {
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.current-user-info {
+  background: #e8f5e8;
+  border: 1px solid var(--secondary-color);
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.current-user-info h3 {
+  color: var(--secondary-color);
+  margin: 0 0 12px 0;
+  font-size: 16px;
+}
+
+.current-user-info p {
+  margin: 4px 0;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.test-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.test-buttons button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-family);
+}
+
+.test-buttons button:hover:not(:disabled) {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.test-buttons button:disabled {
+  background: var(--text-muted);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.test-buttons button:nth-last-child(2) {
+  background: var(--text-secondary);
+}
+
+.test-buttons button:nth-last-child(2):hover:not(:disabled) {
+  background: var(--text-primary);
+}
+
+.test-buttons button.danger {
+  background: var(--hard-color);
+}
+
+.test-buttons button.danger:hover:not(:disabled) {
+  background: #d32f2f;
+}
+
+.test-credentials {
+  background: var(--background-light);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.test-credentials h4 {
+  margin: 0 0 12px 0;
+  color: var(--text-primary);
+}
+
+.test-credentials p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-family: 'Monaco', 'Consolas', monospace;
+}
+
+.test-status {
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.test-status.loading {
+  background: #e3f2fd;
+  color: #1976d2;
+  border: 1px solid #bbdefb;
+}
+
+.test-status.error {
+  background: #ffebee;
+  color: #d32f2f;
+  border: 1px solid #ffcdd2;
+}
+
+.test-results {
+  background: var(--background-light);
+  border-radius: 6px;
+  padding: 20px;
+  border: 1px solid var(--border-light);
+}
+
+.test-results h3 {
+  color: var(--text-primary);
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.test-results h4 {
+  color: var(--text-primary);
+  margin: 16px 0 8px 0;
+  font-size: 16px;
+}
+
+.test-results p {
+  margin: 6px 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.test-results ul {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.test-results li {
+  margin: 4px 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+details {
+  margin-top: 20px;
+}
+
+details summary {
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text-primary);
+  padding: 8px;
+  background: var(--background-light);
+  border-radius: 4px;
+  border: 1px solid var(--border-light);
+}
+
+details summary:hover {
+  background: var(--border-light);
+}
+
+details pre {
+  background: #f8f9fa;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  padding: 16px;
+  overflow-x: auto;
+  font-size: 12px;
+  color: var(--text-primary);
+  max-height: 400px;
+  overflow-y: auto;
+  font-family: 'Monaco', 'Consolas', monospace;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .test-buttons {
+    grid-template-columns: 1fr;
+  }
+  
+  .auth-test {
+    margin: 10px;
+    padding: 16px;
+  }
+}

@@ -1,0 +1,179 @@
+.test-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: var(--font-family);
+  background: var(--background-light);
+  min-height: 100vh;
+}
+
+.dashboard-header {
+  background: var(--background-white);
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.dashboard-header h1 {
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+  font-size: 2.2rem;
+}
+
+.dashboard-header p {
+  color: var(--text-secondary);
+  margin: 0 0 24px 0;
+  font-size: 1.1rem;
+}
+
+.console-info {
+  background: #1a1a1a;
+  color: #00ff00;
+  padding: 16px;
+  border-radius: 6px;
+  text-align: left;
+  font-family: 'Monaco', 'Consolas', monospace;
+}
+
+.console-info h3 {
+  color: #00ff00;
+  margin: 0 0 12px 0;
+  font-size: 14px;
+}
+
+.console-commands {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.console-commands code {
+  background: #2d2d2d;
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #ffff00;
+  font-weight: bold;
+}
+
+.tab-navigation {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 24px;
+  background: var(--background-white);
+  padding: 4px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+}
+
+.tab-button {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.tab-button:hover {
+  background: var(--background-light);
+  color: var(--text-primary);
+}
+
+.tab-button.active {
+  background: var(--primary-color);
+  color: white;
+  box-shadow: var(--shadow-light);
+}
+
+.tab-content {
+  background: var(--background-white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+  overflow: hidden;
+}
+
+.dashboard-footer {
+  background: var(--background-white);
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+  margin-top: 24px;
+}
+
+.dashboard-footer h3,
+.dashboard-footer h4 {
+  color: var(--text-primary);
+  margin: 0 0 12px 0;
+}
+
+.dashboard-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.dashboard-footer li {
+  margin: 8px 0;
+}
+
+.dashboard-footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.dashboard-footer a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+.api-status {
+  background: var(--background-light);
+  padding: 16px;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+}
+
+.api-status p {
+  margin: 6px 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .test-dashboard {
+    padding: 16px;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .tab-navigation {
+    flex-direction: column;
+  }
+  
+  .tab-button {
+    text-align: center;
+  }
+  
+  .console-commands {
+    font-size: 10px;
+  }
+}
+
+/* Dark mode support for console */
+@media (prefers-color-scheme: dark) {
+  .console-info {
+    background: #0d1117;
+    border: 1px solid #30363d;
+  }
+}

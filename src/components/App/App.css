@@ -1,6 +1,4 @@
-.weather_selector:checked {
-  background-color: black;
-}
+/* Remove old weather-related selector */
 .modal__input-label {
   display: flex;
   flex-direction: column;
