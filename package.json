@@ -1,6 +1,7 @@
 {
   "name": "forkloop_frontend",
   "version": "0.2.0",
+  "type": "module",
   "private": true,
   "homepage": "https://testwtwr.jumpingcrab.com",
   "dependencies": {
