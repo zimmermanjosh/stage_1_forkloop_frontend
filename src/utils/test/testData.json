@@ -194,10 +194,7 @@
           "originalName": "fresh ginger or 1 tbsp wet ginger from a jar (no powder!)",
           "amount": 1.0,
           "unit": "tablespoon",
-          "meta": [
-            "fresh",
-            "(no powder!)"
-          ],
+          "meta": ["fresh", "(no powder!)"],
           "measures": {
             "us": {
               "amount": 1.0,
@@ -222,12 +219,7 @@
           "originalName": "fresh garlic (minced) or 1 wet garlic from a jar (no powder!)",
           "amount": 1.0,
           "unit": "tablespoon",
-          "meta": [
-            "fresh",
-            "minced",
-            "()",
-            "(no powder!)"
-          ],
+          "meta": ["fresh", "minced", "()", "(no powder!)"],
           "measures": {
             "us": {
               "amount": 1.0,
@@ -252,9 +244,7 @@
           "originalName": "green pepper",
           "amount": 1.0,
           "unit": "",
-          "meta": [
-            "green"
-          ],
+          "meta": ["green"],
           "measures": {
             "us": {
               "amount": 1.0,
@@ -279,9 +269,7 @@
           "originalName": "fresh ground pepper",
           "amount": 2.0,
           "unit": "tablespoons",
-          "meta": [
-            "fresh"
-          ],
+          "meta": ["fresh"],
           "measures": {
             "us": {
               "amount": 2.0,
@@ -306,9 +294,7 @@
           "originalName": "juicy lemon",
           "amount": 1.0,
           "unit": "",
-          "meta": [
-            "juicy"
-          ],
+          "meta": ["juicy"],
           "measures": {
             "us": {
               "amount": 1.0,
@@ -333,9 +319,7 @@
           "originalName": "low sodium soy sauce",
           "amount": 0.25,
           "unit": "cup",
-          "meta": [
-            "low sodium"
-          ],
+          "meta": ["low sodium"],
           "measures": {
             "us": {
               "amount": 0.25,
@@ -510,9 +494,7 @@
           "originalName": "red pepper",
           "amount": 1.0,
           "unit": "",
-          "meta": [
-            "red"
-          ],
+          "meta": ["red"],
           "measures": {
             "us": {
               "amount": 1.0,
@@ -537,9 +519,7 @@
           "originalName": "red onion",
           "amount": 1.0,
           "unit": "",
-          "meta": [
-            "red"
-          ],
+          "meta": ["red"],
           "measures": {
             "us": {
               "amount": 1.0,
@@ -564,10 +544,7 @@
           "originalName": "Newman's Own Low-Fat Italian Salad Dressing",
           "amount": 0.5,
           "unit": "cup",
-          "meta": [
-            "italian",
-            "low-fat"
-          ],
+          "meta": ["italian", "low-fat"],
           "measures": {
             "us": {
               "amount": 0.5,
@@ -692,9 +669,7 @@
           "originalName": "whole chicken (about",
           "amount": 3.0,
           "unit": "lbs",
-          "meta": [
-            "whole"
-          ],
+          "meta": ["whole"],
           "measures": {
             "us": {
               "amount": 3.0,
@@ -761,16 +736,8 @@
       ],
       "summary": "Boozy Bbq Chicken could be just the <b>gluten free and dairy free</b> recipe you've been looking for. This recipe makes 6 servings with <b>725 calories</b>, <b>32g of protein</b>, and <b>33g of fat</b> each. For <b>$3.33 per serving</b>, this recipe <b>covers 40%</b> of your daily requirements of vitamins and minerals. This recipe from Foodista requires wooden skewers, dijon mustard, molasses, and orange juice. It works well as a main course. From preparation to the plate, this recipe takes roughly <b>45 minutes</b>. 72 people found this recipe to be flavorful and satisfying. Taking all factors into account, this recipe <b>earns a spoonacular score of 93%</b>, which is outstanding. Try <a href=\"https://spoonacular.com/recipes/boozy-bbq-meatballs-in-the-crockpot-497097\">Boozy BBQ Meatballs (in the crockpot)</a>, <a href=\"https://spoonacular.com/recipes/boozy-bum-chicken-74081\">Boozy Bum Chicken</a>, and <a href=\"https://spoonacular.com/recipes/mirjs-boozy-maple-chicken-107728\">Mirj's Boozy Maple Chicken</a> for similar recipes.",
       "cuisines": [],
-      "dishTypes": [
-        "lunch",
-        "main course",
-        "main dish",
-        "dinner"
-      ],
-      "diets": [
-        "gluten free",
-        "dairy free"
-      ],
+      "dishTypes": ["lunch", "main course", "main dish", "dinner"],
+      "diets": ["gluten free", "dairy free"],
       "occasions": [],
       "spoonacularScore": 93.61557006835938,
       "spoonacularSourceUrl": "https://spoonacular.com/boozy-bbq-chicken-635675",
@@ -871,10 +838,7 @@
           "name": "ginger",
           "original": "1 tablespoon fresh ginger or 1 tbsp wet ginger from a jar (no powder!)",
           "originalName": "fresh ginger or 1 tbsp wet ginger from a jar (no powder!)",
-          "meta": [
-            "fresh",
-            "(no powder!)"
-          ],
+          "meta": ["fresh", "(no powder!)"],
           "extendedName": "fresh ginger",
           "image": "https://img.spoonacular.com/ingredients_100x100/ginger.png"
         },
@@ -888,12 +852,7 @@
           "name": "garlic",
           "original": "1 tablespoon clove fresh garlic (minced) or 1 wet garlic from a jar (no powder!)",
           "originalName": "fresh garlic (minced) or 1 wet garlic from a jar (no powder!)",
-          "meta": [
-            "fresh",
-            "minced",
-            "()",
-            "(no powder!)"
-          ],
+          "meta": ["fresh", "minced", "()", "(no powder!)"],
           "extendedName": "fresh garlic",
           "image": "https://img.spoonacular.com/ingredients_100x100/garlic.png"
         },
@@ -907,9 +866,7 @@
           "name": "bell pepper",
           "original": "1 green pepper",
           "originalName": "green pepper",
-          "meta": [
-            "green"
-          ],
+          "meta": ["green"],
           "extendedName": "green bell pepper",
           "image": "https://img.spoonacular.com/ingredients_100x100/green-pepper.jpg"
         },
@@ -923,9 +880,7 @@
           "name": "lemon",
           "original": "1 juicy lemon",
           "originalName": "juicy lemon",
-          "meta": [
-            "juicy"
-          ],
+          "meta": ["juicy"],
           "image": "https://img.spoonacular.com/ingredients_100x100/lemon.png"
         },
         {
@@ -938,9 +893,7 @@
           "name": "soy sauce",
           "original": "1/4 cup low sodium soy sauce",
           "originalName": "low sodium soy sauce",
-          "meta": [
-            "low sodium"
-          ],
+          "meta": ["low sodium"],
           "extendedName": "low sodium soy sauce",
           "image": "https://img.spoonacular.com/ingredients_100x100/soy-sauce.jpg"
         },
@@ -1006,9 +959,7 @@
           "name": "bell pepper",
           "original": "1 red pepper",
           "originalName": "red pepper",
-          "meta": [
-            "red"
-          ],
+          "meta": ["red"],
           "extendedName": "red bell pepper",
           "image": "https://img.spoonacular.com/ingredients_100x100/red-pepper.jpg"
         },
@@ -1022,9 +973,7 @@
           "name": "onion",
           "original": "1 red onion",
           "originalName": "red onion",
-          "meta": [
-            "red"
-          ],
+          "meta": ["red"],
           "extendedName": "red onion",
           "image": "https://img.spoonacular.com/ingredients_100x100/red-onion.png"
         },
@@ -1038,10 +987,7 @@
           "name": "newman's own salad dressing",
           "original": "1/2 cup Newman's Own Low-Fat Italian Salad Dressing",
           "originalName": "Newman's Own Low-Fat Italian Salad Dressing",
-          "meta": [
-            "italian",
-            "low-fat"
-          ],
+          "meta": ["italian", "low-fat"],
           "extendedName": "low fat italian newman's own salad dressing",
           "image": "https://img.spoonacular.com/ingredients_100x100/italian-dressing.jpg"
         },
@@ -1068,9 +1014,7 @@
           "name": "chicken",
           "original": "1 whole chicken (about 3 lbs)",
           "originalName": "whole chicken (about",
-          "meta": [
-            "whole"
-          ],
+          "meta": ["whole"],
           "extendedName": "whole chicken",
           "image": "https://img.spoonacular.com/ingredients_100x100/whole-chicken.jpg"
         }
@@ -1118,10 +1062,7 @@
           "originalName": "boneless, skinless chicken breast halves",
           "amount": 8.0,
           "unit": "",
-          "meta": [
-            "boneless",
-            "skinless"
-          ],
+          "meta": ["boneless", "skinless"],
           "measures": {
             "us": {
               "amount": 8.0,
@@ -1146,9 +1087,7 @@
           "originalName": "egg, slightly beaten",
           "amount": 2.0,
           "unit": "",
-          "meta": [
-            "slightly beaten"
-          ],
+          "meta": ["slightly beaten"],
           "measures": {
             "us": {
               "amount": 2.0,
@@ -1173,9 +1112,7 @@
           "originalName": "Italian bread crumbs",
           "amount": 1.5,
           "unit": "cups",
-          "meta": [
-            "italian"
-          ],
+          "meta": ["italian"],
           "measures": {
             "us": {
               "amount": 1.5,
@@ -1225,9 +1162,7 @@
           "originalName": "mozzarella cheese, shredded",
           "amount": 1.0,
           "unit": "cup",
-          "meta": [
-            "shredded"
-          ],
+          "meta": ["shredded"],
           "measures": {
             "us": {
               "amount": 1.0,
@@ -1252,9 +1187,7 @@
           "originalName": "Parmesan cheese, grated",
           "amount": 0.25,
           "unit": "cup",
-          "meta": [
-            "grated"
-          ],
+          "meta": ["grated"],
           "measures": {
             "us": {
               "amount": 0.25,
@@ -1271,12 +1204,7 @@
       ],
       "summary": "Easy Baked Parmesan Chicken might be a good recipe to expand your main course recipe box. This recipe serves 4 and costs $3.4 per serving. One portion of this dish contains roughly <b>62g of protein</b>, <b>20g of fat</b>, and a total of <b>497 calories</b>. This recipe is liked by 92 foodies and cooks. This recipe from Foodista requires chicken breast halves, egg, parmesan cheese, and mozzarella cheese. From preparation to the plate, this recipe takes roughly <b>45 minutes</b>. With a spoonacular <b>score of 93%</b>, this dish is amazing. <a href=\"https://spoonacular.com/recipes/easy-baked-chicken-parmesan-1450493\">Easy Baked Chicken Parmesan</a>, <a href=\"https://spoonacular.com/recipes/easy-parmesan-baked-chicken-137192\">Easy Parmesan Baked Chicken</a>, and <a href=\"https://spoonacular.com/recipes/weight-watchers-easy-healthy-baked-chicken-parmesan-1293595\">Weight Watchers Easy Healthy Baked Chicken Parmesan</a> are very similar to this recipe.",
       "cuisines": [],
-      "dishTypes": [
-        "lunch",
-        "main course",
-        "main dish",
-        "dinner"
-      ],
+      "dishTypes": ["lunch", "main course", "main dish", "dinner"],
       "diets": [],
       "occasions": [],
       "spoonacularScore": 89.97356414794922,
@@ -1294,10 +1222,7 @@
           "name": "chicken breast halves",
           "original": "8 boneless, skinless chicken breast halves",
           "originalName": "boneless, skinless chicken breast halves",
-          "meta": [
-            "boneless",
-            "skinless"
-          ],
+          "meta": ["boneless", "skinless"],
           "extendedName": "skinless boneless chicken breast halves",
           "image": "https://img.spoonacular.com/ingredients_100x100/chicken-breasts.png"
         },
@@ -1311,9 +1236,7 @@
           "name": "egg",
           "original": "2 egg, slightly beaten",
           "originalName": "egg, slightly beaten",
-          "meta": [
-            "slightly beaten"
-          ],
+          "meta": ["slightly beaten"],
           "image": "https://img.spoonacular.com/ingredients_100x100/egg.png"
         },
         {
@@ -1326,9 +1249,7 @@
           "name": "bread crumbs",
           "original": "1 1/2 cups Italian bread crumbs",
           "originalName": "Italian bread crumbs",
-          "meta": [
-            "italian"
-          ],
+          "meta": ["italian"],
           "extendedName": "italian bread crumbs",
           "image": "https://img.spoonacular.com/ingredients_100x100/italian-bread.jpg"
         },
@@ -1355,9 +1276,7 @@
           "name": "mozzarella cheese",
           "original": "1 cup mozzarella cheese, shredded",
           "originalName": "mozzarella cheese, shredded",
-          "meta": [
-            "shredded"
-          ],
+          "meta": ["shredded"],
           "extendedName": "shredded mozzarella cheese",
           "image": "https://img.spoonacular.com/ingredients_100x100/shredded-cheese-white.jpg"
         },
@@ -1371,9 +1290,7 @@
           "name": "parmesan cheese",
           "original": "1/4 cup Parmesan cheese, grated",
           "originalName": "Parmesan cheese, grated",
-          "meta": [
-            "grated"
-          ],
+          "meta": ["grated"],
           "image": "https://img.spoonacular.com/ingredients_100x100/parmesan.jpg"
         }
       ],
@@ -1420,9 +1337,7 @@
           "originalName": "Moroccan spice mixture (1/2 tsp. cayenne, 1/2 tsp. turmeric, 2 1/2 tsp cumin, 1 tsp. allspice, 1 tsp. cinnamon, 1/2 tsp. coriander)",
           "amount": 2.0,
           "unit": "Tbsp",
-          "meta": [
-            "()"
-          ],
+          "meta": ["()"],
           "measures": {
             "us": {
               "amount": 2.0,
@@ -1472,10 +1387,7 @@
           "originalName": "dried apricot halves, roughly chopped",
           "amount": 0.5,
           "unit": "c",
-          "meta": [
-            "dried",
-            "roughly chopped"
-          ],
+          "meta": ["dried", "roughly chopped"],
           "measures": {
             "us": {
               "amount": 0.5,
@@ -1500,10 +1412,7 @@
           "originalName": "chick peas, drained",
           "amount": 14.0,
           "unit": "oz",
-          "meta": [
-            "drained",
-            "canned"
-          ],
+          "meta": ["drained", "canned"],
           "measures": {
             "us": {
               "amount": 14.0,
@@ -1528,11 +1437,7 @@
           "originalName": "whole peeled tomatoes",
           "amount": 28.0,
           "unit": "oz",
-          "meta": [
-            "whole",
-            "peeled",
-            "canned"
-          ],
+          "meta": ["whole", "peeled", "canned"],
           "measures": {
             "us": {
               "amount": 28.0,
@@ -1557,9 +1462,7 @@
           "originalName": "Finely Chopped Cilantro",
           "amount": 0.5,
           "unit": "cup",
-          "meta": [
-            "finely chopped"
-          ],
+          "meta": ["finely chopped"],
           "measures": {
             "us": {
               "amount": 0.5,
@@ -1609,9 +1512,7 @@
           "originalName": "fat free chicken broth",
           "amount": 2.0,
           "unit": "c",
-          "meta": [
-            "fat free"
-          ],
+          "meta": ["fat free"],
           "measures": {
             "us": {
               "amount": 2.0,
@@ -1661,10 +1562,7 @@
           "originalName": "fresh ginger root, minced",
           "amount": 1.0,
           "unit": "tsp",
-          "meta": [
-            "fresh",
-            "minced"
-          ],
+          "meta": ["fresh", "minced"],
           "measures": {
             "us": {
               "amount": 1.0,
@@ -1689,9 +1587,7 @@
           "originalName": "garlic clove, minced",
           "amount": 1.0,
           "unit": "",
-          "meta": [
-            "minced"
-          ],
+          "meta": ["minced"],
           "measures": {
             "us": {
               "amount": 1.0,
@@ -1716,9 +1612,7 @@
           "originalName": "Salt and ground black pepper",
           "amount": 6.0,
           "unit": "servings",
-          "meta": [
-            "black"
-          ],
+          "meta": ["black"],
           "measures": {
             "us": {
               "amount": 6.0,
@@ -1768,9 +1662,7 @@
           "originalName": "onion, finely chopped",
           "amount": 1.0,
           "unit": "",
-          "meta": [
-            "finely chopped"
-          ],
+          "meta": ["finely chopped"],
           "measures": {
             "us": {
               "amount": 1.0,
@@ -1795,11 +1687,7 @@
           "originalName": "boneless skinless chicken breasts, cut into 1-inch cubes",
           "amount": 2.0,
           "unit": "large",
-          "meta": [
-            "boneless",
-            "skinless",
-            "cut into 1-inch cubes"
-          ],
+          "meta": ["boneless", "skinless", "cut into 1-inch cubes"],
           "measures": {
             "us": {
               "amount": 2.0,
@@ -1816,15 +1704,8 @@
       ],
       "summary": "Moroccan Chicken Tagine is a main course that serves 6. One serving contains <b>224 calories</b>, <b>14g of protein</b>, and <b>6g of fat</b>. For <b>$1.49 per serving</b>, this recipe <b>covers 19%</b> of your daily requirements of vitamins and minerals. 6 people found this recipe to be scrumptious and satisfying. It is brought to you by Foodista. A mixture of flour, almond slivers, canned tomatoes, and a handful of other ingredients are all it takes to make this recipe so tasty. From preparation to the plate, this recipe takes around <b>45 minutes</b>. It is a good option if you're following a <b>dairy free</b> diet. Taking all factors into account, this recipe <b>earns a spoonacular score of 74%</b>, which is pretty good. Similar recipes include <a href=\"https://spoonacular.com/recipes/moroccan-chicken-tagine-264133\">Moroccan Chicken Tagine</a>, <a href=\"https://spoonacular.com/recipes/moroccan-chicken-tagine-124767\">Moroccan Chicken Tagine</a>, and <a href=\"https://spoonacular.com/recipes/moroccan-chicken-tagine-100347\">Moroccan Chicken Tagine</a>.",
       "cuisines": [],
-      "dishTypes": [
-        "lunch",
-        "main course",
-        "main dish",
-        "dinner"
-      ],
-      "diets": [
-        "dairy free"
-      ],
+      "dishTypes": ["lunch", "main course", "main dish", "dinner"],
+      "diets": ["dairy free"],
       "occasions": [],
       "spoonacularScore": 78.25566864013672,
       "spoonacularSourceUrl": "https://spoonacular.com/moroccan-chicken-tagine-652421",
@@ -1841,9 +1722,7 @@
           "name": "moroccan spice mixture",
           "original": "2 Tbsp. Moroccan spice mixture (1/2 tsp. cayenne, 1/2 tsp. turmeric, 2 1/2 tsp cumin, 1 tsp. allspice, 1 tsp. cinnamon, 1/2 tsp. coriander)",
           "originalName": "Moroccan spice mixture (1/2 tsp. cayenne, 1/2 tsp. turmeric, 2 1/2 tsp cumin, 1 tsp. allspice, 1 tsp. cinnamon, 1/2 tsp. coriander)",
-          "meta": [
-            "()"
-          ],
+          "meta": ["()"],
           "image": "https://img.spoonacular.com/ingredients_100x100/seasoning.png"
         },
         {
@@ -1869,10 +1748,7 @@
           "name": "apricot halves",
           "original": "1/2 c. dried apricot halves, roughly chopped",
           "originalName": "dried apricot halves, roughly chopped",
-          "meta": [
-            "dried",
-            "roughly chopped"
-          ],
+          "meta": ["dried", "roughly chopped"],
           "extendedName": "dried apricot halves",
           "image": "https://img.spoonacular.com/ingredients_100x100/dried-apricots.jpg"
         },
@@ -1886,10 +1762,7 @@
           "name": "chick peas",
           "original": "1 14-oz. can chick peas, drained",
           "originalName": "chick peas, drained",
-          "meta": [
-            "drained",
-            "canned"
-          ],
+          "meta": ["drained", "canned"],
           "extendedName": "canned chick peas",
           "image": "https://img.spoonacular.com/ingredients_100x100/chickpeas.png"
         },
@@ -1903,11 +1776,7 @@
           "name": "canned tomatoes",
           "original": "1 28-oz. can whole peeled tomatoes",
           "originalName": "whole peeled tomatoes",
-          "meta": [
-            "whole",
-            "peeled",
-            "canned"
-          ],
+          "meta": ["whole", "peeled", "canned"],
           "extendedName": "whole canned tomatoes",
           "image": "https://img.spoonacular.com/ingredients_100x100/tomatoes-canned.png"
         },
@@ -1921,9 +1790,7 @@
           "name": "cilantro",
           "original": "1/2 cup Finely Chopped Cilantro",
           "originalName": "Finely Chopped Cilantro",
-          "meta": [
-            "finely chopped"
-          ],
+          "meta": ["finely chopped"],
           "image": "https://img.spoonacular.com/ingredients_100x100/cilantro.png"
         },
         {
@@ -1936,9 +1803,7 @@
           "name": "chicken broth",
           "original": "2 c. fat free chicken broth",
           "originalName": "fat free chicken broth",
-          "meta": [
-            "fat free"
-          ],
+          "meta": ["fat free"],
           "extendedName": "fat free chicken broth",
           "image": "https://img.spoonacular.com/ingredients_100x100/chicken-broth.png"
         },
@@ -1952,10 +1817,7 @@
           "name": "ginger root",
           "original": "1 tsp. fresh ginger root, minced",
           "originalName": "fresh ginger root, minced",
-          "meta": [
-            "fresh",
-            "minced"
-          ],
+          "meta": ["fresh", "minced"],
           "extendedName": "fresh ginger root",
           "image": "https://img.spoonacular.com/ingredients_100x100/ginger.png"
         },
@@ -1969,9 +1831,7 @@
           "name": "garlic clove",
           "original": "1 garlic clove, minced",
           "originalName": "garlic clove, minced",
-          "meta": [
-            "minced"
-          ],
+          "meta": ["minced"],
           "image": "https://img.spoonacular.com/ingredients_100x100/garlic.jpg"
         },
         {
@@ -1997,9 +1857,7 @@
           "name": "onion",
           "original": "1 onion, finely chopped",
           "originalName": "onion, finely chopped",
-          "meta": [
-            "finely chopped"
-          ],
+          "meta": ["finely chopped"],
           "image": "https://img.spoonacular.com/ingredients_100x100/brown-onion.png"
         },
         {
@@ -2012,11 +1870,7 @@
           "name": "chicken breasts",
           "original": "2 large boneless skinless chicken breasts, cut into 1-inch cubes",
           "originalName": "boneless skinless chicken breasts, cut into 1-inch cubes",
-          "meta": [
-            "boneless",
-            "skinless",
-            "cut into 1-inch cubes"
-          ],
+          "meta": ["boneless", "skinless", "cut into 1-inch cubes"],
           "extendedName": "skinless boneless chicken breasts",
           "image": "https://img.spoonacular.com/ingredients_100x100/chicken-breasts.png"
         }
@@ -2064,10 +1918,7 @@
           "originalName": "dried white beans",
           "amount": 1.0,
           "unit": "lb",
-          "meta": [
-            "dried",
-            "white"
-          ],
+          "meta": ["dried", "white"],
           "measures": {
             "us": {
               "amount": 1.0,
@@ -2092,9 +1943,7 @@
           "originalName": "cold water",
           "amount": 8.0,
           "unit": "cups",
-          "meta": [
-            "cold"
-          ],
+          "meta": ["cold"],
           "measures": {
             "us": {
               "amount": 8.0,
@@ -2169,9 +2018,7 @@
           "originalName": "onion, chopped",
           "amount": 2.0,
           "unit": "cups",
-          "meta": [
-            "chopped"
-          ],
+          "meta": ["chopped"],
           "measures": {
             "us": {
               "amount": 2.0,
@@ -2196,9 +2043,7 @@
           "originalName": "celery, cut into thirds",
           "amount": 3.0,
           "unit": "inch",
-          "meta": [
-            "cut into thirds"
-          ],
+          "meta": ["cut into thirds"],
           "measures": {
             "us": {
               "amount": 3.0,
@@ -2223,9 +2068,7 @@
           "originalName": "fresh thyme sprigs",
           "amount": 3.0,
           "unit": "",
-          "meta": [
-            "fresh"
-          ],
+          "meta": ["fresh"],
           "measures": {
             "us": {
               "amount": 3.0,
@@ -2275,9 +2118,7 @@
           "originalName": "whole cloves",
           "amount": 3.0,
           "unit": "",
-          "meta": [
-            "whole"
-          ],
+          "meta": ["whole"],
           "measures": {
             "us": {
               "amount": 3.0,
@@ -2302,10 +2143,7 @@
           "originalName": "fresh flat-leaf parsley sprigs plus 1/2 cup chopped leaves",
           "amount": 3.0,
           "unit": "",
-          "meta": [
-            "fresh",
-            "chopped"
-          ],
+          "meta": ["fresh", "chopped"],
           "measures": {
             "us": {
               "amount": 3.0,
@@ -2330,10 +2168,7 @@
           "originalName": "whole black peppercorns",
           "amount": 0.25,
           "unit": "teaspoon",
-          "meta": [
-            "whole",
-            "black"
-          ],
+          "meta": ["whole", "black"],
           "measures": {
             "us": {
               "amount": 0.25,
@@ -2358,11 +2193,7 @@
           "originalName": "stewed tomatoes, finely chopped with juice",
           "amount": 14.0,
           "unit": "oz",
-          "meta": [
-            "with juice",
-            "finely chopped",
-            "canned"
-          ],
+          "meta": ["with juice", "finely chopped", "canned"],
           "measures": {
             "us": {
               "amount": 14.0,
@@ -2437,10 +2268,7 @@
           "originalName": "cooked pork or chicken sausage, cut crosswise into thick slices",
           "amount": 1.0,
           "unit": "lb",
-          "meta": [
-            "thick",
-            "cooked"
-          ],
+          "meta": ["thick", "cooked"],
           "measures": {
             "us": {
               "amount": 1.0,
@@ -2465,10 +2293,7 @@
           "originalName": "coarse fresh bread crumbs (preferably from a baguette)",
           "amount": 2.0,
           "unit": "cups",
-          "meta": [
-            "fresh",
-            "(preferably from a baguette)"
-          ],
+          "meta": ["fresh", "(preferably from a baguette)"],
           "measures": {
             "us": {
               "amount": 2.0,
@@ -2518,9 +2343,7 @@
           "originalName": "black pepper",
           "amount": 0.5,
           "unit": "teaspoon",
-          "meta": [
-            "black"
-          ],
+          "meta": ["black"],
           "measures": {
             "us": {
               "amount": 0.5,
@@ -2537,15 +2360,8 @@
       ],
       "summary": "Cassoulet with Chicken or Duck might be a good recipe to expand your main course recipe box. Watching your figure? This dairy free recipe has <b>651 calories</b>, <b>51g of protein</b>, and <b>22g of fat</b> per serving. This recipe serves 8 and costs $2.36 per serving. From preparation to the plate, this recipe takes around <b>45 minutes</b>. If you have olive oil, onion, chicken sausage, and a few other ingredients on hand, you can make it. 1 person were glad they tried this recipe. It is brought to you by Foodista. Taking all factors into account, this recipe <b>earns a spoonacular score of 56%</b>, which is good. Users who liked this recipe also liked <a href=\"https://spoonacular.com/recipes/duck-and-sausage-cassoulet-1335909\">Duck and Sausage Cassoulet</a>, <a href=\"https://spoonacular.com/recipes/cassoulet-with-duck-confit-74902\">Cassoulet with Duck Confit</a>, and <a href=\"https://spoonacular.com/recipes/duck-and-sausage-cassoulet-205597\">Duck and Sausage Cassoulet</a>.",
       "cuisines": [],
-      "dishTypes": [
-        "lunch",
-        "main course",
-        "main dish",
-        "dinner"
-      ],
-      "diets": [
-        "dairy free"
-      ],
+      "dishTypes": ["lunch", "main course", "main dish", "dinner"],
+      "diets": ["dairy free"],
       "occasions": [],
       "spoonacularScore": 80.40070343017578,
       "spoonacularSourceUrl": "https://spoonacular.com/cassoulet-with-chicken-or-duck-637276",
@@ -2562,10 +2378,7 @@
           "name": "beans",
           "original": "1 lb dried white beans",
           "originalName": "dried white beans",
-          "meta": [
-            "dried",
-            "white"
-          ],
+          "meta": ["dried", "white"],
           "extendedName": "white dried beans",
           "image": "https://img.spoonacular.com/ingredients_100x100/white-beans.jpg"
         },
@@ -2605,9 +2418,7 @@
           "name": "onion",
           "original": "2 cups onion, chopped",
           "originalName": "onion, chopped",
-          "meta": [
-            "chopped"
-          ],
+          "meta": ["chopped"],
           "image": "https://img.spoonacular.com/ingredients_100x100/brown-onion.png"
         },
         {
@@ -2620,9 +2431,7 @@
           "name": "celery",
           "original": "1 (3-inch) piece celery, cut into thirds",
           "originalName": "celery, cut into thirds",
-          "meta": [
-            "cut into thirds"
-          ],
+          "meta": ["cut into thirds"],
           "image": "https://img.spoonacular.com/ingredients_100x100/celery.jpg"
         },
         {
@@ -2635,9 +2444,7 @@
           "name": "thyme sprigs",
           "original": "3 fresh thyme sprigs",
           "originalName": "fresh thyme sprigs",
-          "meta": [
-            "fresh"
-          ],
+          "meta": ["fresh"],
           "extendedName": "fresh thyme sprigs",
           "image": "https://img.spoonacular.com/ingredients_100x100/thyme.jpg"
         },
@@ -2664,9 +2471,7 @@
           "name": "cloves",
           "original": "3 whole cloves",
           "originalName": "whole cloves",
-          "meta": [
-            "whole"
-          ],
+          "meta": ["whole"],
           "extendedName": "whole cloves",
           "image": "https://img.spoonacular.com/ingredients_100x100/cloves.jpg"
         },
@@ -2680,10 +2485,7 @@
           "name": "flat-leaf parsley sprigs plus",
           "original": "3 fresh flat-leaf parsley sprigs plus 1/2 cup chopped leaves",
           "originalName": "fresh flat-leaf parsley sprigs plus 1/2 cup chopped leaves",
-          "meta": [
-            "fresh",
-            "chopped"
-          ],
+          "meta": ["fresh", "chopped"],
           "extendedName": "fresh flat-leaf parsley sprigs plus",
           "image": "https://img.spoonacular.com/ingredients_100x100/parsley.jpg"
         },
@@ -2697,11 +2499,7 @@
           "name": "canned tomatoes",
           "original": "1 (14-oz) can stewed tomatoes, finely chopped with juice",
           "originalName": "stewed tomatoes, finely chopped with juice",
-          "meta": [
-            "with juice",
-            "finely chopped",
-            "canned"
-          ],
+          "meta": ["with juice", "finely chopped", "canned"],
           "image": "https://img.spoonacular.com/ingredients_100x100/tomatoes-canned.png"
         },
         {
@@ -2727,10 +2525,7 @@
           "name": "chicken sausage",
           "original": "1 lb cooked pork or chicken sausage, cut crosswise into thick slices",
           "originalName": "cooked pork or chicken sausage, cut crosswise into thick slices",
-          "meta": [
-            "thick",
-            "cooked"
-          ],
+          "meta": ["thick", "cooked"],
           "extendedName": "cooked chicken sausage",
           "image": "https://img.spoonacular.com/ingredients_100x100/chicken-or-turkey-sausage.jpg"
         },
@@ -2744,10 +2539,7 @@
           "name": "coarse bread crumbs",
           "original": "2 cups coarse fresh bread crumbs (preferably from a baguette)",
           "originalName": "coarse fresh bread crumbs (preferably from a baguette)",
-          "meta": [
-            "fresh",
-            "(preferably from a baguette)"
-          ],
+          "meta": ["fresh", "(preferably from a baguette)"],
           "extendedName": "fresh coarse bread crumbs",
           "image": "https://img.spoonacular.com/ingredients_100x100/breadcrumbs.jpg"
         }
@@ -2795,9 +2587,7 @@
           "originalName": "to 16-pound turkey (completely defrosted the refrigerator, if necessary)",
           "amount": 14.0,
           "unit": "inches",
-          "meta": [
-            "(completely defrosted the refrigerator, if necessary)"
-          ],
+          "meta": ["(completely defrosted the refrigerator, if necessary)"],
           "measures": {
             "us": {
               "amount": 14.0,
@@ -2822,9 +2612,7 @@
           "originalName": "unsalted butter",
           "amount": 0.5,
           "unit": "cup",
-          "meta": [
-            "unsalted"
-          ],
+          "meta": ["unsalted"],
           "measures": {
             "us": {
               "amount": 0.5,
@@ -2849,9 +2637,7 @@
           "originalName": "fresh orange juice",
           "amount": 0.25,
           "unit": "cup",
-          "meta": [
-            "fresh"
-          ],
+          "meta": ["fresh"],
           "measures": {
             "us": {
               "amount": 0.25,
@@ -2901,10 +2687,7 @@
           "originalName": "minced fresh thyme",
           "amount": 1.0,
           "unit": "tablespoon",
-          "meta": [
-            "fresh",
-            "minced"
-          ],
+          "meta": ["fresh", "minced"],
           "measures": {
             "us": {
               "amount": 1.0,
@@ -2954,9 +2737,7 @@
           "originalName": "freshly cracked black pepper",
           "amount": 0.5,
           "unit": "teaspoon",
-          "meta": [
-            "black"
-          ],
+          "meta": ["black"],
           "measures": {
             "us": {
               "amount": 0.5,
@@ -2981,9 +2762,7 @@
           "originalName": "bay leaves (Call me! My bay tree is overloaded.)",
           "amount": 4.0,
           "unit": "",
-          "meta": [
-            "(Call me! My bay tree is overloaded.)"
-          ],
+          "meta": ["(Call me! My bay tree is overloaded.)"],
           "measures": {
             "us": {
               "amount": 4.0,
@@ -3008,9 +2787,7 @@
           "originalName": "celery, roughly chopped",
           "amount": 4.0,
           "unit": "stalks",
-          "meta": [
-            "roughly chopped"
-          ],
+          "meta": ["roughly chopped"],
           "measures": {
             "us": {
               "amount": 4.0,
@@ -3035,9 +2812,7 @@
           "originalName": "onion, roughly chopped",
           "amount": 1.0,
           "unit": "large",
-          "meta": [
-            "roughly chopped"
-          ],
+          "meta": ["roughly chopped"],
           "measures": {
             "us": {
               "amount": 1.0,
@@ -3062,9 +2837,7 @@
           "originalName": "carrots, roughly chopped",
           "amount": 3.0,
           "unit": "",
-          "meta": [
-            "roughly chopped"
-          ],
+          "meta": ["roughly chopped"],
           "measures": {
             "us": {
               "amount": 3.0,
@@ -3089,9 +2862,7 @@
           "originalName": "garlic (leave papery skin on)",
           "amount": 10.0,
           "unit": "cloves",
-          "meta": [
-            "(leave papery skin on)"
-          ],
+          "meta": ["(leave papery skin on)"],
           "measures": {
             "us": {
               "amount": 10.0,
@@ -3116,11 +2887,7 @@
           "originalName": "chicken stock (or 1 can organic chicken broth)",
           "amount": 1.5,
           "unit": "cups",
-          "meta": [
-            "organic",
-            "canned",
-            "(or 1 can chicken broth)"
-          ],
+          "meta": ["organic", "canned", "(or 1 can chicken broth)"],
           "measures": {
             "us": {
               "amount": 1.5,
@@ -3137,16 +2904,9 @@
       ],
       "summary": "If you have about <b>45 minutes</b> to spend in the kitchen, Maple-Glazed Thanksgiving Turkey might be a super <b>gluten free and primal</b> recipe to try. This recipe serves 12 and costs 81 cents per serving. One portion of this dish contains roughly <b>8g of protein</b>, <b>10g of fat</b>, and a total of <b>158 calories</b>. 1 person were impressed by this recipe. This recipe from Foodista requires onion, garlic, carrots, and celery. It works well as a side dish. It will be a hit at your <b>Thanksgiving</b> event. With a spoonacular <b>score of 21%</b>, this dish is rather bad. Try <a href=\"https://spoonacular.com/recipes/thanksgiving-cupcakes-turkey-cranberry-and-maple-519011\">Thanksgiving Cupcakes – Turkey, Cranberry, and Maple</a>, <a href=\"https://spoonacular.com/recipes/maple-glazed-turkey-75166\">Maple-glazed Turkey</a>, and <a href=\"https://spoonacular.com/recipes/maple-glazed-turkey-137870\">Maple-Glazed Turkey</a> for similar recipes.",
       "cuisines": [],
-      "dishTypes": [
-        "side dish"
-      ],
-      "diets": [
-        "gluten free",
-        "primal"
-      ],
-      "occasions": [
-        "thanksgiving"
-      ],
+      "dishTypes": ["side dish"],
+      "diets": ["gluten free", "primal"],
+      "occasions": ["thanksgiving"],
       "spoonacularScore": 33.20302963256836,
       "spoonacularSourceUrl": "https://spoonacular.com/maple-glazed-thanksgiving-turkey-650942",
       "usedIngredientCount": 0,
@@ -3162,9 +2922,7 @@
           "name": "turkey",
           "original": "14 inches to 16-pound turkey (completely defrosted the refrigerator, if necessary)",
           "originalName": "to 16-pound turkey (completely defrosted the refrigerator, if necessary)",
-          "meta": [
-            "(completely defrosted the refrigerator, if necessary)"
-          ],
+          "meta": ["(completely defrosted the refrigerator, if necessary)"],
           "image": "https://img.spoonacular.com/ingredients_100x100/turkey-raw-whole.jpg"
         },
         {
@@ -3177,9 +2935,7 @@
           "name": "butter",
           "original": "1/2 cup unsalted butter",
           "originalName": "unsalted butter",
-          "meta": [
-            "unsalted"
-          ],
+          "meta": ["unsalted"],
           "extendedName": "unsalted butter",
           "image": "https://img.spoonacular.com/ingredients_100x100/butter-sliced.jpg"
         },
@@ -3193,9 +2949,7 @@
           "name": "orange juice",
           "original": "1/4 cup fresh orange juice",
           "originalName": "fresh orange juice",
-          "meta": [
-            "fresh"
-          ],
+          "meta": ["fresh"],
           "extendedName": "fresh orange juice",
           "image": "https://img.spoonacular.com/ingredients_100x100/orange-juice.jpg"
         },
@@ -3222,10 +2976,7 @@
           "name": "thyme",
           "original": "1 tablespoon minced fresh thyme",
           "originalName": "minced fresh thyme",
-          "meta": [
-            "fresh",
-            "minced"
-          ],
+          "meta": ["fresh", "minced"],
           "extendedName": "fresh thyme",
           "image": "https://img.spoonacular.com/ingredients_100x100/thyme.jpg"
         },
@@ -3239,9 +2990,7 @@
           "name": "bay leaves",
           "original": "4 bay leaves (Call me! My bay tree is overloaded.)",
           "originalName": "bay leaves (Call me! My bay tree is overloaded.)",
-          "meta": [
-            "(Call me! My bay tree is overloaded.)"
-          ],
+          "meta": ["(Call me! My bay tree is overloaded.)"],
           "image": "https://img.spoonacular.com/ingredients_100x100/bay-leaves.jpg"
         },
         {
@@ -3254,9 +3003,7 @@
           "name": "celery",
           "original": "4 stalks celery, roughly chopped",
           "originalName": "celery, roughly chopped",
-          "meta": [
-            "roughly chopped"
-          ],
+          "meta": ["roughly chopped"],
           "image": "https://img.spoonacular.com/ingredients_100x100/celery.jpg"
         },
         {
@@ -3269,9 +3016,7 @@
           "name": "onion",
           "original": "1 large onion, roughly chopped",
           "originalName": "onion, roughly chopped",
-          "meta": [
-            "roughly chopped"
-          ],
+          "meta": ["roughly chopped"],
           "image": "https://img.spoonacular.com/ingredients_100x100/brown-onion.png"
         },
         {
@@ -3284,9 +3029,7 @@
           "name": "carrots",
           "original": "3 carrots, roughly chopped",
           "originalName": "carrots, roughly chopped",
-          "meta": [
-            "roughly chopped"
-          ],
+          "meta": ["roughly chopped"],
           "image": "https://img.spoonacular.com/ingredients_100x100/sliced-carrot.png"
         },
         {
@@ -3299,9 +3042,7 @@
           "name": "garlic",
           "original": "10 cloves garlic (leave papery skin on)",
           "originalName": "garlic (leave papery skin on)",
-          "meta": [
-            "(leave papery skin on)"
-          ],
+          "meta": ["(leave papery skin on)"],
           "image": "https://img.spoonacular.com/ingredients_100x100/garlic.png"
         },
         {
@@ -3314,11 +3055,7 @@
           "name": "chicken stock",
           "original": "1 1/2 cups chicken stock (or 1 can organic chicken broth)",
           "originalName": "chicken stock (or 1 can organic chicken broth)",
-          "meta": [
-            "organic",
-            "canned",
-            "(or 1 can chicken broth)"
-          ],
+          "meta": ["organic", "canned", "(or 1 can chicken broth)"],
           "extendedName": "canned chicken stock",
           "image": "https://img.spoonacular.com/ingredients_100x100/canned-food.png"
         }
@@ -3366,10 +3103,7 @@
           "originalName": "Grilled Chicken, chopped and diced",
           "amount": 2.0,
           "unit": "cups",
-          "meta": [
-            "diced",
-            "chopped"
-          ],
+          "meta": ["diced", "chopped"],
           "measures": {
             "us": {
               "amount": 2.0,
@@ -3419,10 +3153,7 @@
           "originalName": "fresh ear corn, with husked removed",
           "amount": 1.0,
           "unit": "",
-          "meta": [
-            "fresh",
-            "with husked removed"
-          ],
+          "meta": ["fresh", "with husked removed"],
           "measures": {
             "us": {
               "amount": 1.0,
@@ -3447,9 +3178,7 @@
           "originalName": "extra virgin olive oil for drizzling on corn",
           "amount": 1.0,
           "unit": "tablespoon",
-          "meta": [
-            "for drizzling on corn"
-          ],
+          "meta": ["for drizzling on corn"],
           "measures": {
             "us": {
               "amount": 1.0,
@@ -3474,10 +3203,7 @@
           "originalName": "jalapeno chiles, seeded and finely chopped",
           "amount": 2.0,
           "unit": "",
-          "meta": [
-            "seeded",
-            "finely chopped"
-          ],
+          "meta": ["seeded", "finely chopped"],
           "measures": {
             "us": {
               "amount": 2.0,
@@ -3502,9 +3228,7 @@
           "originalName": "extra-virgin olive oil",
           "amount": 0.5,
           "unit": "cup",
-          "meta": [
-            "extra-virgin"
-          ],
+          "meta": ["extra-virgin"],
           "measures": {
             "us": {
               "amount": 0.5,
@@ -3554,10 +3278,7 @@
           "originalName": "finely chopped red onion",
           "amount": 0.75,
           "unit": "cup",
-          "meta": [
-            "red",
-            "finely chopped"
-          ],
+          "meta": ["red", "finely chopped"],
           "measures": {
             "us": {
               "amount": 0.75,
@@ -3582,9 +3303,7 @@
           "originalName": "red potatoes",
           "amount": 7.0,
           "unit": "",
-          "meta": [
-            "red"
-          ],
+          "meta": ["red"],
           "measures": {
             "us": {
               "amount": 7.0,
@@ -3651,18 +3370,9 @@
       ],
       "summary": "Grilled Chicken & Corn Red Potato Salad is a <b>gluten free and dairy free</b> side dish. One portion of this dish contains approximately <b>13g of protein</b>, <b>7g of fat</b>, and a total of <b>248 calories</b>. This recipe serves 8. For <b>93 cents per serving</b>, this recipe <b>covers 12%</b> of your daily requirements of vitamins and minerals. 1 person found this recipe to be scrumptious and satisfying. A mixture of red wine vinegar, dijon mustard, ear corn, and a handful of other ingredients are all it takes to make this recipe so scrumptious. It will be a hit at your <b>The Fourth Of July</b> event. From preparation to the plate, this recipe takes around <b>45 minutes</b>. It is brought to you by Foodista. With a spoonacular <b>score of 40%</b>, this dish is solid. Try <a href=\"https://spoonacular.com/recipes/grilled-potato-corn-red-onion-salad-over-arugula-7439\">Grilled Potato, Corn & Red Onion Salad Over Arugula</a>, <a href=\"https://spoonacular.com/recipes/grilled-corn-red-pepper-salad-544514\">Grilled Corn & Red Pepper Salad</a>, and <a href=\"https://spoonacular.com/recipes/warm-red-potato-and-corn-salad-96074\">Warm Red Potato and Corn Salad</a> for similar recipes.",
       "cuisines": [],
-      "dishTypes": [
-        "side dish"
-      ],
-      "diets": [
-        "gluten free",
-        "dairy free"
-      ],
-      "occasions": [
-        "father's day",
-        "4th of july",
-        "summer"
-      ],
+      "dishTypes": ["side dish"],
+      "diets": ["gluten free", "dairy free"],
+      "occasions": ["father's day", "4th of july", "summer"],
       "spoonacularScore": 74.24574279785156,
       "spoonacularSourceUrl": "https://spoonacular.com/grilled-chicken-corn-red-potato-salad-645621",
       "usedIngredientCount": 0,
@@ -3678,10 +3388,7 @@
           "name": "grilled chicken",
           "original": "2 cups Grilled Chicken, chopped and diced",
           "originalName": "Grilled Chicken, chopped and diced",
-          "meta": [
-            "diced",
-            "chopped"
-          ],
+          "meta": ["diced", "chopped"],
           "extendedName": "diced grilled chicken",
           "image": "https://img.spoonacular.com/ingredients_100x100/rotisserie-chicken.png"
         },
@@ -3708,10 +3415,7 @@
           "name": "ear corn",
           "original": "1 fresh ear corn, with husked removed",
           "originalName": "fresh ear corn, with husked removed",
-          "meta": [
-            "fresh",
-            "with husked removed"
-          ],
+          "meta": ["fresh", "with husked removed"],
           "extendedName": "fresh ear corn",
           "image": "https://img.spoonacular.com/ingredients_100x100/corn-on-the-cob.jpg"
         },
@@ -3725,10 +3429,7 @@
           "name": "jalapeno chiles",
           "original": "2 jalapeno chiles, seeded and finely chopped",
           "originalName": "jalapeno chiles, seeded and finely chopped",
-          "meta": [
-            "seeded",
-            "finely chopped"
-          ],
+          "meta": ["seeded", "finely chopped"],
           "image": "https://img.spoonacular.com/ingredients_100x100/jalapeno-pepper.png"
         },
         {
@@ -3741,10 +3442,7 @@
           "name": "onion",
           "original": "3/4 cup finely chopped red onion",
           "originalName": "finely chopped red onion",
-          "meta": [
-            "red",
-            "finely chopped"
-          ],
+          "meta": ["red", "finely chopped"],
           "extendedName": "red onion",
           "image": "https://img.spoonacular.com/ingredients_100x100/red-onion.png"
         },
@@ -3758,9 +3456,7 @@
           "name": "potatoes",
           "original": "7 red potatoes",
           "originalName": "red potatoes",
-          "meta": [
-            "red"
-          ],
+          "meta": ["red"],
           "extendedName": "red potatoes",
           "image": "https://img.spoonacular.com/ingredients_100x100/red-potatoes.jpg"
         },

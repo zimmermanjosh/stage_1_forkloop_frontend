@@ -1,4 +1,3 @@
-
 .modal {
   font-family: var(--font-family);
   display: flex;
@@ -108,7 +107,7 @@
 .modal__delete-button {
   background: none;
   border: none;
-  color: #FF4D00;
+  color: #ff4d00;
   font-family: var(--font-family);
   font-size: 16px;
   font-weight: 700;
@@ -128,7 +127,7 @@
 .delete__button {
   background: none;
   border: none;
-  color: #FF4D00;
+  color: #ff4d00;
   font-family: var(--font-family);
   font-size: 16px;
   font-weight: 700;
@@ -162,9 +161,15 @@
   text-transform: capitalize;
 }
 
-.recipe-modal__difficulty--easy { background: var(--easy-color); }
-.recipe-modal__difficulty--medium { background: var(--medium-color); }
-.recipe-modal__difficulty--hard { background: var(--hard-color); }
+.recipe-modal__difficulty--easy {
+  background: var(--easy-color);
+}
+.recipe-modal__difficulty--medium {
+  background: var(--medium-color);
+}
+.recipe-modal__difficulty--hard {
+  background: var(--hard-color);
+}
 
 .recipe-modal__content-section {
   padding: 20px 28px;
@@ -336,20 +341,20 @@
     max-width: 95vw;
     margin: 20px;
   }
-  
+
   .recipe-modal__content-section {
     padding: 16px 20px;
   }
-  
+
   .recipe-modal__meta {
     gap: 8px;
   }
-  
+
   .recipe-modal__actions {
     flex-direction: column;
     gap: 8px;
   }
-  
+
   .recipe-modal__save-button,
   .modal__delete-button {
     width: 100%;

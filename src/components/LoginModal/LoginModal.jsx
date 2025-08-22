@@ -1,8 +1,14 @@
-
 import React, { useState } from "react";
 import "./LoginModal.css";
 
-const LoginModal = ({ isOpen, onClose, onLogin, onRegisterClick, isLoading, loginError }) => {
+const LoginModal = ({
+  isOpen,
+  onClose,
+  onLogin,
+  onRegisterClick,
+  isLoading,
+  loginError,
+}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -42,7 +48,7 @@ const LoginModal = ({ isOpen, onClose, onLogin, onRegisterClick, isLoading, logi
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className={`login-modal__input ${loginError ? 'login-modal__input--error' : ''}`}
+                className={`login-modal__input ${loginError ? "login-modal__input--error" : ""}`}
               />
             </div>
 
@@ -62,9 +68,7 @@ const LoginModal = ({ isOpen, onClose, onLogin, onRegisterClick, isLoading, logi
 
             {/* Error message */}
             {loginError && (
-              <div className="login-modal__error">
-                Incorrect password
-              </div>
+              <div className="login-modal__error">Incorrect password</div>
             )}
 
             {/* Button container */}
@@ -72,7 +76,7 @@ const LoginModal = ({ isOpen, onClose, onLogin, onRegisterClick, isLoading, logi
               <button
                 type="submit"
                 disabled={isLoading}
-                className={`login-modal__submit-button ${isFormFilled ? 'login-modal__submit-button--filled' : ''}`}
+                className={`login-modal__submit-button ${isFormFilled ? "login-modal__submit-button--filled" : ""}`}
               >
                 {isLoading ? "Logging in..." : "Log in"}
               </button>

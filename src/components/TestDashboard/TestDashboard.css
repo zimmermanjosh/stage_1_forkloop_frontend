@@ -34,7 +34,7 @@
   padding: 16px;
   border-radius: 6px;
   text-align: left;
-  font-family: 'Monaco', 'Consolas', monospace;
+  font-family: "Monaco", "Consolas", monospace;
 }
 
 .console-info h3 {
@@ -152,19 +152,19 @@
   .test-dashboard {
     padding: 16px;
   }
-  
+
   .dashboard-header h1 {
     font-size: 1.8rem;
   }
-  
+
   .tab-navigation {
     flex-direction: column;
   }
-  
+
   .tab-button {
     text-align: center;
   }
-  
+
   .console-commands {
     font-size: 10px;
   }

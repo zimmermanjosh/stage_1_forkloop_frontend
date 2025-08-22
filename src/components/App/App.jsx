@@ -4,15 +4,15 @@ import Footer from "../Footer/Footer.jsx";
 import Main from "../Main/Main.jsx";
 import ItemModal from "../ItemModal/ItemModal.jsx";
 import {
-  searchRecipes,
-  parseRecipeSearchResults,
   getRandomRecipes,
-  parseRandomRecipeResults
-} from "../../utils/SpoonacularApi.jsx"
+  parseRandomRecipeResults,
+  // searchRecipes,          // TODO: Re-enable when search is implemented
+  // parseRecipeSearchResults,  // TODO: Re-enable when search is implemented
+} from "../../utils/SpoonacularApi.jsx";
 import { defaultRecipes } from "../../utils/config.jsx";
 
 import { CurrentRecipePreferencesContext } from "../../contexts/CurrentRecipePreferencesContext.jsx";
-import {CurrentUserContext} from "../../contexts/CurrentUserContext.jsx";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext.jsx";
 import AddItemModal from "../AddItemModal/AddItemModal.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 import LoginModal from "../LoginModal/LoginModal.jsx";
@@ -21,8 +21,18 @@ import ConfirmDeleteModal from "../ConfirmDeleteModal/ConfirmDeleteModal.jsx";
 import logger from "../../utils/logger.jsx";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Profile from "../Profile/Profile.jsx";
-import { deleteItems, addItems, addCardLike, removeCardLike } from "../../utils/api.jsx";
-import { register, login, checkToken, updateUserProfile } from "../../utils/auth.jsx";
+import {
+  deleteItems,
+  addItems,
+  addCardLike,
+  removeCardLike,
+} from "../../utils/api.jsx";
+import {
+  register,
+  login,
+  checkToken,
+  updateUserProfile,
+} from "../../utils/auth.jsx";
 import EditProfileModal from "../EditProfileModal/EditProfileModal.jsx";
 import ApiTest from "../ApiTest/ApiTest.jsx";
 import AuthTest from "../AuthTest/AuthTest.jsx";
@@ -30,7 +40,6 @@ import TestDashboard from "../TestDashboard/TestDashboard.jsx";
 import "../../utils/testHelpers.jsx";
 
 import version from "../../version.jsx";
-
 
 function App() {
   logger("App");
@@ -54,15 +63,15 @@ function App() {
   useEffect(() => {
     // Load initial recipes instead of weather
     getRandomRecipes({ tags: selectedCategory, number: 12 })
-        .then(parseRandomRecipeResults)
-        .then((recipeData) => {
-          setRecipes(recipeData);
-        })
-        .catch((error) => {
-          console.error("Error loading recipes:", error);
-          // Fallback to default recipes from config
-          setRecipes(defaultRecipes);
-        });
+      .then(parseRandomRecipeResults)
+      .then((recipeData) => {
+        setRecipes(recipeData);
+      })
+      .catch((error) => {
+        console.error("Error loading recipes:", error);
+        // Fallback to default recipes from config
+        setRecipes(defaultRecipes);
+      });
   }, [selectedCategory]);
 
   // Check for existing JWT token on app load
@@ -97,9 +106,6 @@ function App() {
   const handleCategoryFilter = (category) => {
     setSelectedCategory(category);
   };
-
-
-
 
   const handleCreateModal = () => {
     setActiveModal("create-recipe");
@@ -170,31 +176,31 @@ function App() {
       });
   };
 
-const handleLogin = ({ email, password }) => {
-  setIsLoading(true);
-  setLoginError(false);
+  const handleLogin = ({ email, password }) => {
+    setIsLoading(true);
+    setLoginError(false);
 
-  login({ email, password })
-    .then((data) => {
-      if (data.token) {
-        localStorage.setItem("jwt", data.token);
-        return checkToken(data.token);
-      }
-    })
-    .then((userData) => {
-      setCurrentUser(userData);
-      setIsLoggedIn(true);
-      handleCloseModal();
-      history("/");
-    })
-    .catch((err) => {
-      console.log("Login error:", err);
-      setLoginError(true);
-    })
-    .finally(() => {
-      setIsLoading(false);
-    });
-};
+    login({ email, password })
+      .then((data) => {
+        if (data.token) {
+          localStorage.setItem("jwt", data.token);
+          return checkToken(data.token);
+        }
+      })
+      .then((userData) => {
+        setCurrentUser(userData);
+        setIsLoggedIn(true);
+        handleCloseModal();
+        history("/");
+      })
+      .catch((err) => {
+        console.log("Login error:", err);
+        setLoginError(true);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
 
   const handleSignOut = () => {
     localStorage.removeItem("jwt");
@@ -218,74 +224,74 @@ const handleLogin = ({ email, password }) => {
       });
   };
 
-const handleDeleteModal = (recipe) => {
-  console.log("🔧 Opening delete confirmation for:", recipe.title);
-  setItemToDelete(recipe);
-  setActiveModal("confirm-delete");
-};
+  const handleDeleteModal = (recipe) => {
+    console.log("🔧 Opening delete confirmation for:", recipe.title);
+    setItemToDelete(recipe);
+    setActiveModal("confirm-delete");
+  };
 
   const handleConfirmDelete = () => {
-  if (!itemToDelete) return;
+    if (!itemToDelete) return;
 
-  console.log("🔧 Confirming delete for:", itemToDelete.title);
+    console.log("🔧 Confirming delete for:", itemToDelete.title);
 
-  deleteItems(itemToDelete._id)
-    .then(() => {
-      console.log("✅ Recipe deleted successfully");
-      handleCloseModal();
-      const updatedRecipes = recipes.filter((item) => item._id !== itemToDelete._id);
-      setRecipes(updatedRecipes);
-      setItemToDelete(null);
-    })
-    .catch((error) => {
-      console.error("Error deleting item:", error);
-      alert("Failed to delete item. Please try again.");
-    });
-};
+    deleteItems(itemToDelete._id)
+      .then(() => {
+        console.log("✅ Recipe deleted successfully");
+        handleCloseModal();
+        const updatedRecipes = recipes.filter(
+          (item) => item._id !== itemToDelete._id,
+        );
+        setRecipes(updatedRecipes);
+        setItemToDelete(null);
+      })
+      .catch((error) => {
+        console.error("Error deleting item:", error);
+        alert("Failed to delete item. Please try again.");
+      });
+  };
 
-
-const onAddItem = (values) => {
-  addItems(values)
-    .then((res) => {
-      // Add to front of array (newest first)
-      setRecipes((prevRecipes) => [res, ...prevRecipes]);
-      handleCloseModal();
-    })
-    .catch((error) => {
-      console.error("Error adding item:", error);
-      alert("Failed to add item. Please try again.");
-    });
-};
+  const onAddItem = (values) => {
+    addItems(values)
+      .then((res) => {
+        // Add to front of array (newest first)
+        setRecipes((prevRecipes) => [res, ...prevRecipes]);
+        handleCloseModal();
+      })
+      .catch((error) => {
+        console.error("Error adding item:", error);
+        alert("Failed to add item. Please try again.");
+      });
+  };
 
   const handleCardLike = ({ id, isLiked }) => {
-  const token = localStorage.getItem("jwt");
+    const token = localStorage.getItem("jwt");
 
-  // Check if this card is now liked
-  if (isLiked) {
-    // Add like
-    addCardLike(id, token)
-      .then((updatedRecipe) => {
-        setRecipes((items) =>
-          items.map((item) => (item._id === id ? updatedRecipe : item))
-        );
-      })
-      .catch((error) => {
-        console.error("Error liking item:", error);
-      });
-  } else {
-    // Remove like
-    removeCardLike(id, token)
-      .then((updatedRecipe) => {
-        setRecipes((items) =>
-          items.map((item) => (item._id === id ? updatedRecipe : item))
-        );
-      })
-      .catch((error) => {
-        console.error("Error removing like:", error);
-      });
-  }
-};
-
+    // Check if this card is now liked
+    if (isLiked) {
+      // Add like
+      addCardLike(id, token)
+        .then((updatedRecipe) => {
+          setRecipes((items) =>
+            items.map((item) => (item._id === id ? updatedRecipe : item)),
+          );
+        })
+        .catch((error) => {
+          console.error("Error liking item:", error);
+        });
+    } else {
+      // Remove like
+      removeCardLike(id, token)
+        .then((updatedRecipe) => {
+          setRecipes((items) =>
+            items.map((item) => (item._id === id ? updatedRecipe : item)),
+          );
+        })
+        .catch((error) => {
+          console.error("Error removing like:", error);
+        });
+    }
+  };
 
   logger(recipes);
   logger(selectedCategory);
@@ -293,13 +299,13 @@ const onAddItem = (values) => {
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <CurrentRecipePreferencesContext.Provider
-        value={{ 
-          currentDiet, 
-          currentCuisine, 
-          maxCookingTime, 
-          handleDietChange, 
-          handleCuisineChange, 
-          handleCookingTimeChange 
+        value={{
+          currentDiet,
+          currentCuisine,
+          maxCookingTime,
+          handleDietChange,
+          handleCuisineChange,
+          handleCookingTimeChange,
         }}
       >
         <Header
@@ -315,39 +321,33 @@ const onAddItem = (values) => {
             path="/"
             element={
               <Main
-                  recipes={recipes}
-                  onCardClick={handleSelectedCard}
-                  selectedCategory={selectedCategory}
-                  onCategoryChange={handleCategoryFilter}
+                recipes={recipes}
+                onCardClick={handleSelectedCard}
+                selectedCategory={selectedCategory}
+                onCategoryChange={handleCategoryFilter}
               />
             }
           />
-         <Route path="/profile"
-          element={
-          <ProtectedRoute isLoggedIn={isLoggedIn}>
-          <Profile
-            onSelectedCard={handleSelectedCard}
-            onCreateModal={handleCreateModal}
-            onEditProfile={handleEditProfileModal}
-            onSignOut={handleSignOut}
-            cards={recipes.filter(item => !item.owner || item.owner === currentUser?._id)} // Include items without owner
-            onCardLike={handleCardLike}
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute isLoggedIn={isLoggedIn}>
+                <Profile
+                  onSelectedCard={handleSelectedCard}
+                  onCreateModal={handleCreateModal}
+                  onEditProfile={handleEditProfileModal}
+                  onSignOut={handleSignOut}
+                  cards={recipes.filter(
+                    (item) => !item.owner || item.owner === currentUser?._id,
+                  )} // Include items without owner
+                  onCardLike={handleCardLike}
+                />
+              </ProtectedRoute>
+            }
           />
-          </ProtectedRoute>
-          }
-        />
-        <Route 
-          path="/api-test" 
-          element={<ApiTest />} 
-        />
-        <Route 
-          path="/auth-test" 
-          element={<AuthTest />} 
-        />
-        <Route 
-          path="/tests" 
-          element={<TestDashboard />} 
-        />
+          <Route path="/api-test" element={<ApiTest />} />
+          <Route path="/auth-test" element={<AuthTest />} />
+          <Route path="/tests" element={<TestDashboard />} />
         </Routes>
         <Footer />
         {activeModal === "create-recipe" && (

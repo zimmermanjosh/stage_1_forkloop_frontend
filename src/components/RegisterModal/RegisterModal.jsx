@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import "./RegisterModal.css";
 
-const RegisterModal = ({ isOpen, onClose, onRegister, onLoginClick, isLoading }) => {
+const RegisterModal = ({
+  isOpen,
+  onClose,
+  onRegister,
+  onLoginClick,
+  isLoading,
+}) => {
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState("");
   const [email, setEmail] = useState("");

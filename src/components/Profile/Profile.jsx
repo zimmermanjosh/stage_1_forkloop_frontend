@@ -3,21 +3,18 @@ import ClothesSection from "../ClothesSection/ClothesSection.jsx";
 import "./Profile.css";
 
 const Profile = ({
-                   onSelectedCard,
-                   onCreateModal,
-                   onEditProfile,
-                   onSignOut,
-                   cards,
-                   onCardLike
+  onSelectedCard,
+  onCreateModal,
+  onEditProfile,
+  onSignOut,
+  cards,
+  onCardLike,
 }) => {
   console.log("!!Profile");
   return (
     <div className="profile">
       <section className="profile__sidebar">
-        <SideBar
-          onEditProfile={onEditProfile}
-          onSignOut={onSignOut}
-        />
+        <SideBar onEditProfile={onEditProfile} onSignOut={onSignOut} />
       </section>
       <section className="profile__clothes">
         <ClothesSection

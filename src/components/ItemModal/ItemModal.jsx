@@ -17,18 +17,18 @@ const RecipeModal = ({ selectedCard, onClose, onCardDelete, isLoggedIn }) => {
   const recipeTitle = recipe.title || recipe.name;
 
   // Format cooking time
-  const cookingTime = recipe.readyInMinutes || recipe.cookingTime || 'N/A';
-  
+  const cookingTime = recipe.readyInMinutes || recipe.cookingTime || "N/A";
+
   // Format difficulty
-  const difficulty = recipe.difficulty || 'Medium';
-  
+  const difficulty = recipe.difficulty || "Medium";
+
   // Format servings
-  const servings = recipe.servings || 'N/A';
+  const servings = recipe.servings || "N/A";
 
   // Clean up HTML from summary
-  const cleanSummary = recipe.summary 
-    ? recipe.summary.replace(/<[^>]*>/g, '').slice(0, 300) + '...'
-    : 'No description available.';
+  const cleanSummary = recipe.summary
+    ? recipe.summary.replace(/<[^>]*>/g, "").slice(0, 300) + "..."
+    : "No description available.";
 
   return (
     <div className="modal">
@@ -40,12 +40,10 @@ const RecipeModal = ({ selectedCard, onClose, onCardDelete, isLoggedIn }) => {
         ></button>
 
         <div className="modal__image-container">
-          <img
-            className="modal__image"
-            alt={recipeTitle}
-            src={recipeImage}
-          />
-          <div className={`recipe-modal__difficulty-badge recipe-modal__difficulty--${difficulty.toLowerCase()}`}>
+          <img className="modal__image" alt={recipeTitle} src={recipeImage} />
+          <div
+            className={`recipe-modal__difficulty-badge recipe-modal__difficulty--${difficulty.toLowerCase()}`}
+          >
             {difficulty}
           </div>
         </div>
@@ -55,8 +53,12 @@ const RecipeModal = ({ selectedCard, onClose, onCardDelete, isLoggedIn }) => {
             <h2 className="recipe-modal__title">{recipeTitle}</h2>
             <div className="recipe-modal__meta">
               <span className="recipe-modal__time">🕒 {cookingTime} min</span>
-              <span className="recipe-modal__servings">👥 {servings} servings</span>
-              <span className="recipe-modal__category">🍽️ {recipe.category}</span>
+              <span className="recipe-modal__servings">
+                👥 {servings} servings
+              </span>
+              <span className="recipe-modal__category">
+                🍽️ {recipe.category}
+              </span>
             </div>
           </div>
 
@@ -69,14 +71,17 @@ const RecipeModal = ({ selectedCard, onClose, onCardDelete, isLoggedIn }) => {
             <div className="recipe-modal__ingredients">
               <h3>Ingredients</h3>
               <ul>
-                {recipe.extendedIngredients.slice(0, 8).map((ingredient, index) => (
-                  <li key={index}>
-                    {ingredient.amount} {ingredient.unit} {ingredient.name}
-                  </li>
-                ))}
+                {recipe.extendedIngredients
+                  .slice(0, 8)
+                  .map((ingredient, index) => (
+                    <li key={index}>
+                      {ingredient.amount} {ingredient.unit} {ingredient.name}
+                    </li>
+                  ))}
                 {recipe.extendedIngredients.length > 8 && (
                   <li className="recipe-modal__more-ingredients">
-                    ...and {recipe.extendedIngredients.length - 8} more ingredients
+                    ...and {recipe.extendedIngredients.length - 8} more
+                    ingredients
                   </li>
                 )}
               </ul>
@@ -98,9 +103,9 @@ const RecipeModal = ({ selectedCard, onClose, onCardDelete, isLoggedIn }) => {
 
           {recipe.sourceUrl && (
             <div className="recipe-modal__source">
-              <a 
-                href={recipe.sourceUrl} 
-                target="_blank" 
+              <a
+                href={recipe.sourceUrl}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="recipe-modal__source-link"
               >
@@ -120,9 +125,9 @@ const RecipeModal = ({ selectedCard, onClose, onCardDelete, isLoggedIn }) => {
                 Remove Recipe
               </button>
             )}
-            <button 
+            <button
               className="recipe-modal__save-button"
-              onClick={() => console.log('Save recipe feature coming soon!')}
+              onClick={() => console.log("Save recipe feature coming soon!")}
             >
               💾 Save Recipe
             </button>

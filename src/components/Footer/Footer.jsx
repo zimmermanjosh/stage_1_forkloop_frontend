@@ -1,11 +1,10 @@
 import "./Footer.css";
 import logger from "../../utils/logger.jsx";
 
-let date = new Date().getFullYear()
-
+let date = new Date().getFullYear();
 
 const Footer = () => {
- logger("Footer");
+  logger("Footer");
 
   return (
     <footer className="footer">
