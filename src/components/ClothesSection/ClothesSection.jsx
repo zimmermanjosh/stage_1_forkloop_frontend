@@ -1,7 +1,12 @@
 import ItemCard from "../ItemCard/ItemCard.jsx";
 import "../ClothesSection/ClothesSection.css";
 
-const ClothesSection = ({ cards, handleCreateModal, onSelectedCard, onCardLike }) => {
+const ClothesSection = ({
+  cards,
+  handleCreateModal,
+  onSelectedCard,
+  onCardLike,
+}) => {
   console.log("!!ClothersSection");
   return (
     <div className="clothes__section">

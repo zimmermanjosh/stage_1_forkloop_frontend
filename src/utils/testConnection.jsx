@@ -1,6 +1,6 @@
 // testConnection.jsx
 
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
 
 const baseUrl = "http://localhost:3001";
 
@@ -61,11 +61,13 @@ const testConnection = async () => {
     console.log("\nTesting protected endpoint (GET /users/me)...");
     const userResponse = await fetch(`${baseUrl}/users/me`, {
       headers: {
-        "Authorization": `Bearer ${loginData.token}`,
+        Authorization: `Bearer ${loginData.token}`,
       },
     });
     if (!userResponse.ok) {
-      throw new Error(`Error accessing protected endpoint: ${userResponse.status}`);
+      throw new Error(
+        `Error accessing protected endpoint: ${userResponse.status}`,
+      );
     }
     const userData = await userResponse.json();
     console.log("✅ Protected endpoint working!");

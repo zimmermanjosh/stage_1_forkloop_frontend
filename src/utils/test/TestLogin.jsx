@@ -1,7 +1,7 @@
 // from dot basic login test
 // src/utils/testLogin.js
 
-import { login, checkToken } from '../auth.jsx';
+import { login, checkToken } from "../auth.jsx";
 
 // Test login with valid credentials
 async function testValidLogin() {
@@ -10,7 +10,7 @@ async function testValidLogin() {
     // Replace with a valid test account
     const response = await login({
       email: "test@example.com",
-      password: "password123"
+      password: "password123",
     });
 
     console.log("Login response:", response);
@@ -40,7 +40,7 @@ async function testInvalidLogin() {
   try {
     const response = await login({
       email: "nonexistent@example.com",
-      password: "wrongpassword"
+      password: "wrongpassword",
     });
 
     console.log("Login response:", response);
@@ -56,7 +56,7 @@ export function runLoginTests() {
   testValidLogin()
     .then(() => testInvalidLogin())
     .then(() => console.log("\nAll login tests completed"))
-    .catch(err => console.error("Error running tests:", err));
+    .catch((err) => console.error("Error running tests:", err));
 }
 
 // Export individual tests for manual running

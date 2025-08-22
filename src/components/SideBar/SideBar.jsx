@@ -9,7 +9,11 @@ const SideBar = ({ onEditProfile, onSignOut }) => {
 
   const renderAvatar = () => {
     return currentUser?.avatar ? (
-      <img src={currentUser.avatar} className="sidebar__avatar" alt="user avatar" />
+      <img
+        src={currentUser.avatar}
+        className="sidebar__avatar"
+        alt="user avatar"
+      />
     ) : (
       <div className="sidebar__avatar-placeholder">
         {currentUser?.name ? currentUser.name.charAt(0).toUpperCase() : ""}

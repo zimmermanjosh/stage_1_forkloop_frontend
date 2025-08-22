@@ -12,7 +12,7 @@ export const getForecastWeather = () => {
   const token = localStorage.getItem("jwt");
 
   const headers = {
-    "Content-Type": "application/json"
+    "Content-Type": "application/json",
   };
 
   if (token) {

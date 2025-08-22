@@ -17,27 +17,17 @@ const ConfirmDeleteModal = ({ isOpen, onClose, onConfirm, itemName }) => {
           <h3 className="confirm-modal__title">
             Are you sure you want to delete this item?
           </h3>
-          {itemName && (
-            <p className="confirm-modal__item-name">
-              {itemName}
-            </p>
-          )}
+          {itemName && <p className="confirm-modal__item-name">{itemName}</p>}
           <p className="confirm-modal__subtitle">
             This action is irreversible.
           </p>
         </div>
 
         <div className="confirm-modal__buttons">
-          <button
-            className="confirm-modal__confirm-button"
-            onClick={onConfirm}
-          >
+          <button className="confirm-modal__confirm-button" onClick={onConfirm}>
             Yes, delete item
           </button>
-          <button
-            className="confirm-modal__cancel-button"
-            onClick={onClose}
-          >
+          <button className="confirm-modal__cancel-button" onClick={onClose}>
             Cancel
           </button>
         </div>

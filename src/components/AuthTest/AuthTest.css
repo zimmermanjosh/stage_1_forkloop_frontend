@@ -98,7 +98,7 @@
   margin: 6px 0;
   font-size: 14px;
   color: var(--text-secondary);
-  font-family: 'Monaco', 'Consolas', monospace;
+  font-family: "Monaco", "Consolas", monospace;
 }
 
 .test-status {
@@ -185,7 +185,7 @@ details pre {
   color: var(--text-primary);
   max-height: 400px;
   overflow-y: auto;
-  font-family: 'Monaco', 'Consolas', monospace;
+  font-family: "Monaco", "Consolas", monospace;
 }
 
 /* Responsive adjustments */
@@ -193,7 +193,7 @@ details pre {
   .test-buttons {
     grid-template-columns: 1fr;
   }
-  
+
   .auth-test {
     margin: 10px;
     padding: 16px;
