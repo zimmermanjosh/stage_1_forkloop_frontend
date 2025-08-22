@@ -1,6 +1,45 @@
-src/vendor/normalize.css
-node_modules
-build
-dist
+# Build outputs and generated files
+dist/
+build/
+*.tsbuildinfo
+
+# Vite build assets with hash patterns  
+dist/assets/
+build/static/
+
+# Vendor files that shouldn't be formatted
+src/vendor/
+vendor/
+
+# Dependencies
+node_modules/
+.npm/
+.yarn/
+coverage/
+
+# Environment and lock files
+.env*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Generated files with hash patterns
+**/*-*.js
+**/*-*.css
+**/index-*.js
+**/index-*.css
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# IDE and OS files
 .DS_Store
-coverage
+Thumbs.db
+.vscode/
+
+# Documentation that shouldn't be auto-formatted
+CHANGELOG.md
+LICENSE
+*.md.backup

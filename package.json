@@ -1,6 +1,7 @@
 {
   "name": "forkloop_frontend",
   "version": "0.2.0",
+  "type": "module",
   "private": true,
   "homepage": "https://testwtwr.jumpingcrab.com",
   "dependencies": {
@@ -43,8 +44,8 @@
     "format:check": "prettier --check \"src/**/*.{js,jsx,css,json}\"",
     "clean:local": "rm -rf dist && rm -rf node_modules",
     "prebuild:nvm": "npm run clean:local && npm install",
-    "lint": "eslint \"**/*.{js,jsx}\"",
-    "lint:fix": "eslint \"**/*.{js,jsx}\" --fix",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --ignore-path .eslintingnore",
+    "lint:fix": "eslint \"src/**/*.{js,jsx}\" --ignore-path .eslintingnore --fix",
     "nvm_use": "chmod +x scripts/build.sh && scripts/build.sh",
     "predeploy": "npm run build",
     "github:deploy": "gh-pages -d dist",

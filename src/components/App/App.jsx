@@ -21,7 +21,7 @@ import ConfirmDeleteModal from "../ConfirmDeleteModal/ConfirmDeleteModal.jsx";
 import logger from "../../utils/logger.jsx";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Profile from "../Profile/Profile.jsx";
-import { deleteItems, addItems, getItems, addCardLike, removeCardLike } from "../../utils/api.jsx";
+import { deleteItems, addItems, addCardLike, removeCardLike } from "../../utils/api.jsx";
 import { register, login, checkToken, updateUserProfile } from "../../utils/auth.jsx";
 import EditProfileModal from "../EditProfileModal/EditProfileModal.jsx";
 import ApiTest from "../ApiTest/ApiTest.jsx";
@@ -36,7 +36,7 @@ function App() {
   logger("App");
 
   const [recipes, setRecipes] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("chicken");
+  // const [searchQuery, setSearchQuery] = useState("chicken"); // TODO: implement search functionality
   const [selectedCategory, setSelectedCategory] = useState("dinner");
   const [selectedRecipe, setSelectedRecipe] = useState({});
 
@@ -82,16 +82,17 @@ function App() {
   }, []);
 
   //modal handlers
-  const handleRecipeSearch = (query) => {
-    setSearchQuery(query);
-    searchRecipes(query, {
-      type: selectedCategory,
-      number: 12
-    })
-        .then(parseRecipeSearchResults)
-        .then(setRecipes)
-        .catch(console.error);
-  };
+  // TODO: Implement recipe search functionality
+  // const handleRecipeSearch = (query) => {
+  //   setSearchQuery(query);
+  //   searchRecipes(query, {
+  //     type: selectedCategory,
+  //     number: 12
+  //   })
+  //       .then(parseRecipeSearchResults)
+  //       .then(setRecipes)
+  //       .catch(console.error);
+  // };
 
   const handleCategoryFilter = (category) => {
     setSelectedCategory(category);
@@ -318,7 +319,6 @@ const onAddItem = (values) => {
                   onCardClick={handleSelectedCard}
                   selectedCategory={selectedCategory}
                   onCategoryChange={handleCategoryFilter}
-                  onSearch={handleRecipeSearch}
               />
             }
           />

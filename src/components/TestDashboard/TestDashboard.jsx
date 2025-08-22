@@ -24,7 +24,7 @@ const TestDashboard = () => {
           <div className="console-commands">
             <code>window.testAPI.runQuickTest()</code> - Quick API test
             <br />
-            <code>window.testAPI.testSearch('pasta')</code> - Test recipe search
+            <code>window.testAPI.testSearch(&apos;pasta&apos;)</code> - Test recipe search
             <br />
             <code>window.testAPI.runAllTests()</code> - Run all API tests
           </div>
