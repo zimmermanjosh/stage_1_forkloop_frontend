@@ -32,7 +32,7 @@ const Header = ({
       <div className="header__logo">
         <div>
           <Link to="/">
-            <img src={logoImage} alt="logo"></img>
+            <img src={logoImage} alt="ForkLoop logo" className="header__logo-image"></img>
           </Link>
         </div>
         <div>

@@ -16,6 +16,12 @@
   align-items: center;
 }
 
+.header__logo-image {
+  width: 89px;
+  height: 40px;
+  object-fit: contain;
+}
+
 .header__avatar-logo {
   display: flex;
   gap: 20px;
