@@ -6,14 +6,12 @@ import ItemModal from "../ItemModal/ItemModal.jsx";
 import {
   getRandomRecipes,
   parseRandomRecipeResults,
-  // searchRecipes,          // TODO: Re-enable when search is implemented
-  // parseRecipeSearchResults,  // TODO: Re-enable when search is implemented
 } from "../../utils/SpoonacularApi.jsx";
 import { defaultRecipes } from "../../utils/config.jsx";
 
 import { CurrentRecipePreferencesContext } from "../../contexts/CurrentRecipePreferencesContext.jsx";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext.jsx";
-import AddItemModal from "../AddItemModal/AddItemModal.jsx";
+import AddRecipeModal from "../AddRecipeModal/AddRecipeModal.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 import LoginModal from "../LoginModal/LoginModal.jsx";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.jsx";
@@ -351,10 +349,10 @@ function App() {
         </Routes>
         <Footer />
         {activeModal === "create-recipe" && (
-          <AddItemModal
+          <AddRecipeModal
             handleCloseModal={handleCloseModal}
             isOpen={activeModal === "create-recipe"}
-            onAddItem={onAddItem}
+            onAddRecipe={onAddItem}
           />
         )}
         {activeModal === "recipe-detail" && (

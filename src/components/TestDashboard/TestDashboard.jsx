@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ApiTest from "../ApiTest/ApiTest.jsx";
 import AuthTest from "../AuthTest/AuthTest.jsx";
 import MockAuthDemo from "../MockAuthDemo/MockAuthDemo.jsx";
+import AddRecipeDemo from "../AddRecipeDemo/AddRecipeDemo.jsx";
 import "./TestDashboard.css";
 
 const TestDashboard = () => {
@@ -11,6 +12,7 @@ const TestDashboard = () => {
     { id: "api", label: "🧪 API Tests", component: ApiTest },
     { id: "auth", label: "🔐 Auth Tests", component: AuthTest },
     { id: "mock", label: "🧪 Mock Auth", component: MockAuthDemo },
+    { id: "recipe", label: "🍽️ Recipe Search", component: AddRecipeDemo },
   ];
 
   const ActiveComponent = tabs.find((tab) => tab.id === activeTab)?.component;
