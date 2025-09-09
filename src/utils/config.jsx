@@ -522,7 +522,6 @@
 }
  */
 
-
 export const defaultRecipes = [
   {
     _id: 635675,
@@ -534,11 +533,11 @@ export const defaultRecipes = [
     servings: 6,
     glutenFree: true,
     dairyFree: true,
-    spoonacularScore: 94
+    spoonacularScore: 94,
   },
   {
     _id: 641836,
-    title: "Easy Baked Parmesan Chicken", 
+    title: "Easy Baked Parmesan Chicken",
     category: "dinner",
     image: "https://img.spoonacular.com/recipes/641836-312x231.jpg",
     cookingTime: 45,
@@ -546,19 +545,19 @@ export const defaultRecipes = [
     servings: 4,
     glutenFree: false,
     dairyFree: false,
-    spoonacularScore: 90
+    spoonacularScore: 90,
   },
   {
     _id: 652421,
     title: "Moroccan Chicken Tagine",
     category: "dinner",
-    image: "https://img.spoonacular.com/recipes/652421-312x231.jpg", 
+    image: "https://img.spoonacular.com/recipes/652421-312x231.jpg",
     cookingTime: 45,
     difficulty: "medium", // Complex spice blend
     servings: 6,
     glutenFree: false,
     dairyFree: true,
-    spoonacularScore: 78
+    spoonacularScore: 78,
   },
   {
     _id: 637276,
@@ -570,7 +569,7 @@ export const defaultRecipes = [
     servings: 8,
     glutenFree: false,
     dairyFree: true,
-    spoonacularScore: 80
+    spoonacularScore: 80,
   },
   {
     _id: 650942,
@@ -582,7 +581,7 @@ export const defaultRecipes = [
     servings: 12,
     glutenFree: true,
     dairyFree: false,
-    spoonacularScore: 33
+    spoonacularScore: 33,
   },
   {
     _id: 645621,
@@ -594,10 +593,9 @@ export const defaultRecipes = [
     servings: 8,
     glutenFree: true,
     dairyFree: true,
-    spoonacularScore: 74
-  }
+    spoonacularScore: 74,
+  },
 ];
-
 
 // Import all SVG assets
 import dayCloudy from "../images/day/cloudy.svg";
@@ -718,15 +716,15 @@ export const weatherOptions = [
 
 export const categoryFilters = {
   breakfast: "breakfast",
-  lunch: "lunch", 
+  lunch: "lunch",
   dinner: "dinner",
-  snack: "snack"
+  snack: "snack",
 };
 
 export const difficultyLevels = {
   easy: "easy",
-  medium: "medium", 
-  hard: "hard"
+  medium: "medium",
+  hard: "hard",
 };
 
 export const spoonacularAPIData = {
@@ -735,15 +733,25 @@ export const spoonacularAPIData = {
   endpoints: {
     complexSearch: "/recipes/complexSearch",
     recipeInformation: "/recipes/{id}/information",
-    randomRecipes: "/recipes/random"
-  }
+    randomRecipes: "/recipes/random",
+  },
 };
 
 export const userNameProfile = "Joshua Zimmerman";
 
+// Test user data for authentication testing
+export const testUser = {
+  email: "jtest@test.com",
+  password: "test123456",
+  name: "jtest",
+  avatar: "https://i.pravatar.cc/300?img=50",
+  _id: "test_user_12345"
+};
+
 // removed and updated 20250718
 //export const BASE_URL = "http://localhost:3001";
 
-export const BASE_URL = import.meta.env.MODE === "production"
-  ? "https://api.testwtwr.jumpingcrab.com"
-  : "http://localhost:3001";
+export const BASE_URL =
+  import.meta.env.MODE === "production"
+    ? "https://api.testwtwr.jumpingcrab.com"
+    : "http://localhost:3001";

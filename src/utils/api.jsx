@@ -18,15 +18,14 @@ export const getItems = () => {
   const token = localStorage.getItem("jwt");
 
   const headers = {
-    "Content-Type": "application/json"
+    "Content-Type": "application/json",
   };
 
   if (token) {
     headers["Authorization"] = `Bearer ${token}`;
   }
 
-  return request(`${BASE_URL}/items`, { headers })
-    .then((data) => data.data);
+  return request(`${BASE_URL}/items`, { headers }).then((data) => data.data);
 };
 
 // POST request with auth
@@ -36,12 +35,10 @@ export const addItems = (data) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(data),
-  })
-    .then((data) => data.data);
-
+  }).then((data) => data.data);
 };
 
 // DELETE request with auth
@@ -56,10 +53,9 @@ export const deleteItems = (id) => {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     },
   });
-
 };
 
 // Like an item
@@ -69,11 +65,9 @@ export const addCardLike = (id) => {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
-  })
-    .then((data) => data.data);
-
+  }).then((data) => data.data);
 };
 
 // Remove like from item
@@ -83,9 +77,7 @@ export const removeCardLike = (id) => {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
-  })
-    .then((data) => data.data);
-
+  }).then((data) => data.data);
 };

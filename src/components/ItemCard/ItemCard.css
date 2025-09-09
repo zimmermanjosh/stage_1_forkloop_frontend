@@ -39,7 +39,9 @@
   border-radius: 12px;
   box-shadow: var(--shadow-light);
   overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
   max-width: 320px;
 }
 
@@ -73,9 +75,15 @@
   text-transform: capitalize;
 }
 
-.card__difficulty--easy { background: var(--easy-color); }
-.card__difficulty--medium { background: var(--medium-color); }
-.card__difficulty--hard { background: var(--hard-color); }
+.card__difficulty--easy {
+  background: var(--easy-color);
+}
+.card__difficulty--medium {
+  background: var(--medium-color);
+}
+.card__difficulty--hard {
+  background: var(--hard-color);
+}
 
 .card__content {
   padding: 16px;
@@ -130,10 +138,22 @@
   font-weight: 500;
 }
 
-.card__tag--gf { background: #dbeafe; color: #1e40af; }
-.card__tag--df { background: #fef3c7; color: #92400e; }
-.card__tag--v { background: #d1fae5; color: #065f46; }
-.card__tag--vg { background: #e0e7ff; color: #3730a3; }
+.card__tag--gf {
+  background: #dbeafe;
+  color: #1e40af;
+}
+.card__tag--df {
+  background: #fef3c7;
+  color: #92400e;
+}
+.card__tag--v {
+  background: #d1fae5;
+  color: #065f46;
+}
+.card__tag--vg {
+  background: #e0e7ff;
+  color: #3730a3;
+}
 
 .card__like-button {
   background: none;

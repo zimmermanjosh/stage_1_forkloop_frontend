@@ -14,7 +14,7 @@ export const searchRecipes = (query = "chicken", options = {}) => {
     type = "", // breakfast, lunch, dinner
     maxReadyTime = "",
     addRecipeInformation = true,
-    fillIngredients = false
+    fillIngredients = false,
   } = options;
 
   const params = new URLSearchParams({
@@ -25,14 +25,14 @@ export const searchRecipes = (query = "chicken", options = {}) => {
     fillIngredients,
     ...(diet && { diet }),
     ...(type && { type }),
-    ...(maxReadyTime && { maxReadyTime })
+    ...(maxReadyTime && { maxReadyTime }),
   });
 
   const apiRequest = `${baseURL}${endpoints.complexSearch}?${params}`;
   logger("Request URL:", apiRequest);
 
   const headers = {
-    "Content-Type": "application/json"
+    "Content-Type": "application/json",
   };
 
   return fetch(apiRequest, { headers })
@@ -51,14 +51,14 @@ export const getRecipeInformation = (recipeId) => {
 
   const params = new URLSearchParams({
     apiKey: APIkey,
-    includeNutrition: false
+    includeNutrition: false,
   });
 
   const apiRequest = `${baseURL}/recipes/${recipeId}/information?${params}`;
   logger("Request URL:", apiRequest);
 
   const headers = {
-    "Content-Type": "application/json"
+    "Content-Type": "application/json",
   };
 
   return fetch(apiRequest, { headers })
@@ -83,14 +83,14 @@ export const getRandomRecipes = (options = {}) => {
   const params = new URLSearchParams({
     apiKey: APIkey,
     number,
-    ...(tags && { tags })
+    ...(tags && { tags }),
   });
 
   const apiRequest = `${baseURL}${endpoints.randomRecipes}?${params}`;
   logger("Request URL:", apiRequest);
 
   const headers = {
-    "Content-Type": "application/json"
+    "Content-Type": "application/json",
   };
 
   return fetch(apiRequest, { headers })
@@ -110,7 +110,7 @@ export const parseRecipeData = (spoonacularRecipe) => {
   // Determine difficulty based on readyInMinutes and complexity
   const getDifficulty = (readyInMinutes, extendedIngredients = []) => {
     const ingredientCount = extendedIngredients.length;
-    
+
     if (readyInMinutes <= 20 || ingredientCount <= 5) return "easy";
     if (readyInMinutes <= 45 || ingredientCount <= 10) return "medium";
     return "hard";
@@ -119,12 +119,13 @@ export const parseRecipeData = (spoonacularRecipe) => {
   // Determine category from dishTypes
   const getCategory = (dishTypes = []) => {
     const types = dishTypes.join(" ").toLowerCase();
-    
+
     if (types.includes("breakfast")) return "breakfast";
     if (types.includes("lunch") || types.includes("side dish")) return "lunch";
-    if (types.includes("dinner") || types.includes("main course")) return "dinner";
+    if (types.includes("dinner") || types.includes("main course"))
+      return "dinner";
     if (types.includes("snack") || types.includes("appetizer")) return "snack";
-    
+
     return "dinner"; // default
   };
 
@@ -136,7 +137,7 @@ export const parseRecipeData = (spoonacularRecipe) => {
     cookingTime: spoonacularRecipe.readyInMinutes || 30,
     difficulty: getDifficulty(
       spoonacularRecipe.readyInMinutes,
-      spoonacularRecipe.extendedIngredients
+      spoonacularRecipe.extendedIngredients,
     ),
     servings: spoonacularRecipe.servings || 4,
     glutenFree: spoonacularRecipe.glutenFree || false,
@@ -145,7 +146,7 @@ export const parseRecipeData = (spoonacularRecipe) => {
     vegan: spoonacularRecipe.vegan || false,
     spoonacularScore: Math.round(spoonacularRecipe.spoonacularScore || 0),
     sourceUrl: spoonacularRecipe.sourceUrl,
-    summary: spoonacularRecipe.summary
+    summary: spoonacularRecipe.summary,
   };
 
   logger("Parsed recipe:", recipe);
@@ -155,7 +156,7 @@ export const parseRecipeData = (spoonacularRecipe) => {
 // Parse multiple recipes from search results
 export const parseRecipeSearchResults = (data) => {
   logger("Parsing recipe search results");
-  
+
   if (!data.results || !Array.isArray(data.results)) {
     console.warn("Invalid recipe search results format");
     return [];
@@ -167,7 +168,7 @@ export const parseRecipeSearchResults = (data) => {
 // Parse random recipes results
 export const parseRandomRecipeResults = (data) => {
   logger("Parsing random recipe results");
-  
+
   if (!data.recipes || !Array.isArray(data.recipes)) {
     console.warn("Invalid random recipes results format");
     return [];

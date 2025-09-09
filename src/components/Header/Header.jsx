@@ -7,11 +7,11 @@ import { useContext } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext.jsx";
 
 const Header = ({
-                  onCreateModal,
-                  onRegisterModal,
-                  onLoginModal,
-                  isLoggedIn
-                }) => {
+  onCreateModal,
+  onRegisterModal,
+  onLoginModal,
+  isLoggedIn,
+}) => {
   logger("!! Header");
 
   const currentUser = useContext(CurrentUserContext);
@@ -32,7 +32,11 @@ const Header = ({
       <div className="header__logo">
         <div>
           <Link to="/">
-            <img src={logoImage} alt="logo"></img>
+            <img
+              src={logoImage}
+              alt="ForkLoop logo"
+              className="header__logo-image"
+            ></img>
           </Link>
         </div>
         <div>
@@ -41,11 +45,14 @@ const Header = ({
       </div>
 
       <div className="header__avatar-logo">
-
         {isLoggedIn ? (
           <>
             <div>
-              <button type="text" onClick={onCreateModal} className="header__button">
+              <button
+                type="text"
+                onClick={onCreateModal}
+                className="header__button"
+              >
                 + Add Recipe
               </button>
             </div>
@@ -56,10 +63,18 @@ const Header = ({
           </>
         ) : (
           <>
-            <button type="text" onClick={onRegisterModal} className="header__button">
+            <button
+              type="text"
+              onClick={onRegisterModal}
+              className="header__button"
+            >
               Sign Up
             </button>
-            <button type="text" onClick={onLoginModal} className="header__button">
+            <button
+              type="text"
+              onClick={onLoginModal}
+              className="header__button"
+            >
               Log In
             </button>
           </>

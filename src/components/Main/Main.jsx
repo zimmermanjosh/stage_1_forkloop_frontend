@@ -35,15 +35,17 @@ function Main({ recipes, onCardClick, selectedCategory, onCategoryChange }) {
           ))}
         </div>
       </section>
-      
+
       <section className="card__section" id="card-section">
         <div className="section-header">
           <h2>
-            {selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)} Recipes
+            {selectedCategory.charAt(0).toUpperCase() +
+              selectedCategory.slice(1)}{" "}
+            Recipes
             {filteredRecipes.length > 0 && ` (${filteredRecipes.length})`}
           </h2>
         </div>
-        
+
         <div className="card__items">
           {filteredRecipes.length > 0 ? (
             filteredRecipes.map((recipe) => (
@@ -54,7 +56,9 @@ function Main({ recipes, onCardClick, selectedCategory, onCategoryChange }) {
               />
             ))
           ) : (
-            <p>No {selectedCategory} recipes found. Try a different category!</p>
+            <p>
+              No {selectedCategory} recipes found. Try a different category!
+            </p>
           )}
         </div>
       </section>
