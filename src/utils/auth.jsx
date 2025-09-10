@@ -1,11 +1,11 @@
 import { checkResponse } from "./api.jsx";
 import { BASE_URL } from "./config.jsx";
-import { 
-  mockRegister, 
-  mockLogin, 
-  mockCheckToken, 
-  mockUpdateUserProfile, 
-  shouldUseMockAuth 
+import {
+  mockRegister,
+  mockLogin,
+  mockCheckToken,
+  mockUpdateUserProfile,
+  shouldUseMockAuth,
 } from "./mockAuth.jsx";
 
 function request(url, options) {
@@ -18,7 +18,7 @@ export const register = ({ name, avatar, email, password }) => {
     console.log("🧪 Using mock authentication for register");
     return mockRegister({ name, avatar, email, password });
   }
-  
+
   return request(`${BASE_URL}/signup`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -32,7 +32,7 @@ export const login = ({ email, password }) => {
     console.log("🧪 Using mock authentication for login");
     return mockLogin({ email, password });
   }
-  
+
   return request(`${BASE_URL}/signin`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -46,7 +46,7 @@ export const checkToken = (token) => {
     console.log("🧪 Using mock authentication for token check");
     return mockCheckToken(token);
   }
-  
+
   return request(`${BASE_URL}/users/me`, {
     method: "GET",
     headers: {
@@ -63,7 +63,7 @@ export const updateUserProfile = (name, avatar) => {
     console.log("🧪 Using mock authentication for profile update");
     return mockUpdateUserProfile(name, avatar);
   }
-  
+
   const token = localStorage.getItem("jwt");
   return request(`${BASE_URL}/users/me`, {
     method: "PATCH",

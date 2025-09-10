@@ -9,7 +9,7 @@ ForkLoop eliminates "what should I cook?" decision fatigue with personalized rec
 ## Key Features
 
 - **Smart Recipe Discovery**: Personalized recommendations using Spoonacular API
-- **Dietary Intelligence**: Filter by preferences, restrictions, and nutritional goals  
+- **Dietary Intelligence**: Filter by preferences, restrictions, and nutritional goals
 - **Skill-Based Suggestions**: Recipes matched to your cooking experience level
 - **Ingredient-Aware**: Find recipes based on what you already have
 - **Personal Collections**: Save, organize, and rate your favorite recipes
@@ -28,8 +28,9 @@ ForkLoop eliminates "what should I cook?" decision fatigue with personalized rec
 ## Architecture Transformation
 
 Built by strategically transforming proven WTWR architecture:
+
 - `clothingItem.js → recipe.js`
-- `Weather API → Spoonacular API` 
+- `Weather API → Spoonacular API`
 - `ItemCard → RecipeCard`
 - `Weather conditions → Meal categories`
 - `Clothing collections → Recipe collections`
@@ -37,8 +38,9 @@ Built by strategically transforming proven WTWR architecture:
 ## Stage 1 Development Focus
 
 **Timeline**: 28 days (Frontend + API Integration)
+
 - ✅ Foundation & branding updates
-- 🔄 Core components (RecipeCard, search, detail views)  
+- 🔄 Core components (RecipeCard, search, detail views)
 - 📋 Spoonacular API integration & filtering
 - 📋 Polish, responsive design, deployment
 
@@ -47,13 +49,15 @@ Built by strategically transforming proven WTWR architecture:
 ForkLoop leverages modular React components for recipe discovery and meal planning:
 
 **Core Components:**
+
 - `RecipeCard` - Individual recipe display and interaction
-- `RecipeDetail` - Comprehensive recipe view with ingredients/instructions  
+- `RecipeDetail` - Comprehensive recipe view with ingredients/instructions
 - `SearchFilters` - Dietary preferences, cuisine, cooking time filters
 - `RecipeCollection` - Personal saved recipes and meal plans
 - `UserProfile` - Dietary preferences and cooking skill management
 
 **Utility Structure:**
+
 ```
 src/
 ├── components/           # React components
@@ -68,6 +72,7 @@ src/
 ```
 
 **API Integration:**
+
 - `src/utils/SpoonacularApi.jsx` - Recipe data and search
 - `src/utils/auth.jsx` - User authentication
 - `src/utils/config.jsx` - Environment configuration
@@ -138,38 +143,43 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser
 ForkLoop includes comprehensive testing components for API and authentication validation:
 
 ### Test Routes
+
 - **Full Test Dashboard**: [http://localhost:3000/tests](http://localhost:3000/tests)
-- **API Tests Only**: [http://localhost:3000/api-test](http://localhost:3000/api-test) 
+- **API Tests Only**: [http://localhost:3000/api-test](http://localhost:3000/api-test)
 - **Auth Tests Only**: [http://localhost:3000/auth-test](http://localhost:3000/auth-test)
 
 ### Browser Console Testing
+
 Open browser console and run quick tests:
 
 ```javascript
 // Quick API connectivity test
-window.testAPI.runQuickTest()
+window.testAPI.runQuickTest();
 
 // Test recipe search functionality
-window.testAPI.testSearch('chicken')
+window.testAPI.testSearch("chicken");
 
-// Test random recipe fetching  
-window.testAPI.testRandom('breakfast')
+// Test random recipe fetching
+window.testAPI.testRandom("breakfast");
 
 // Test individual recipe details
-window.testAPI.testDetails('715538')
+window.testAPI.testDetails("715538");
 
 // Run comprehensive API test suite
-window.testAPI.runAllTests()
+window.testAPI.runAllTests();
 ```
 
 ### Test Features
+
 - **🧪 API Testing**: Spoonacular integration validation
+
   - Recipe search with filters (diet, cuisine, cooking time)
   - Random recipe fetching by category
   - Individual recipe detail retrieval
   - Error handling and fallback testing
 
 - **🔐 Authentication Testing**: User system validation
+
   - User registration flow
   - Login authentication with JWT tokens
   - Token validation and refresh
@@ -183,9 +193,10 @@ window.testAPI.runAllTests()
   - User-friendly result summaries
 
 ### Development Benefits
+
 - Validate API integration before deployment
 - Test authentication flows thoroughly
-- Debug connection issues quickly  
+- Debug connection issues quickly
 - Verify data parsing accuracy
 - Ensure error handling works correctly
 
@@ -206,15 +217,18 @@ For local development with mock data:
 ## Project Timeline & Updates
 
 ### Stage 1: Frontend + API Integration (28 days)
+
 **Target Completion:** 7 days early (Day 21)
 
 ### Development Milestones
+
 - **Week 1:** ✅ Foundation & branding transformation
 - **Week 2:** 🔄 Core recipe components & Spoonacular integration
-- **Week 3:** 📋 Advanced filtering & user preferences  
+- **Week 3:** 📋 Advanced filtering & user preferences
 - **Week 4:** 📋 Polish, responsive design, deployment
 
 ### Success Metrics
+
 - Responsive design (320px+ no horizontal scroll)
 - BEM CSS methodology compliance
 - React hooks implementation
@@ -222,6 +236,7 @@ For local development with mock data:
 - Spoonacular API integration (150 req/day limit)
 
 ### Repository Resources
+
 - **Frontend**: [https://github.com/zimmermanjosh/se_project_react]
 - **Backend** (Stage 2): [https://github.com/zimmermanjosh/se_project_express]
 - **Live Demo**: Coming in Stage 1 completion

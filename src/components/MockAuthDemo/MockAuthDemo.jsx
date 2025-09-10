@@ -14,7 +14,7 @@ const MockAuthDemo = () => {
     try {
       const result = await login({
         email: testUser.email,
-        password: testUser.password
+        password: testUser.password,
       });
       setResponse(result);
       // Store token for testing
@@ -34,7 +34,7 @@ const MockAuthDemo = () => {
         email: "newuser@test.com",
         password: "password123",
         name: "New Test User",
-        avatar: "https://i.pravatar.cc/300?img=25"
+        avatar: "https://i.pravatar.cc/300?img=25",
       });
       setResponse(result);
       localStorage.setItem("jwt", result.token);
@@ -53,14 +53,23 @@ const MockAuthDemo = () => {
   return (
     <div className="mock-auth-demo">
       <h3>🧪 Mock Authentication Demo</h3>
-      
+
       <div className="test-user-info">
         <h4>Test User Credentials:</h4>
         <ul>
-          <li><strong>Email:</strong> {testUser.email}</li>
-          <li><strong>Password:</strong> {testUser.password}</li>
-          <li><strong>Name:</strong> {testUser.name}</li>
-          <li><strong>Avatar:</strong> <img src={testUser.avatar} alt="avatar" width="40" height="40" /></li>
+          <li>
+            <strong>Email:</strong> {testUser.email}
+          </li>
+          <li>
+            <strong>Password:</strong> {testUser.password}
+          </li>
+          <li>
+            <strong>Name:</strong> {testUser.name}
+          </li>
+          <li>
+            <strong>Avatar:</strong>{" "}
+            <img src={testUser.avatar} alt="avatar" width="40" height="40" />
+          </li>
         </ul>
       </div>
 

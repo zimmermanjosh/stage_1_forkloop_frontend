@@ -2,66 +2,66 @@ name: Basic Testing
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [main, develop]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   basic-checks:
     name: 🧪 Basic Checks
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        
+
       - name: Setup Node.js 18
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          cache: 'npm'
-          
+          node-version: "18"
+          cache: "npm"
+
       - name: Install dependencies
         run: |
           echo "📦 Installing dependencies..."
           npm ci
-          
+
       - name: Run linting
         run: |
           echo "🔍 Running ESLint..."
           npm run lint
-          
+
       - name: Build application
         run: |
           echo "🏗️ Building application..."
           npm run build
-          
+
       - name: Test build output
         run: |
           echo "✅ Checking build output..."
           ls -la dist/
           echo "Build completed successfully!"
-          
+
       - name: Basic smoke test
         run: |
           echo "🚀 Running basic smoke test..."
           # Start server in background
           npm run preview &
           SERVER_PID=$!
-          
+
           # Wait for server
           sleep 10
-          
+
           # Test if server responds
           curl -f http://localhost:4173 || {
             echo "❌ Server not responding"
             kill $SERVER_PID
             exit 1
           }
-          
+
           echo "✅ Server is responding"
           kill $SERVER_PID
-          
+
       - name: Report success
         run: |
           echo "🎉 All basic tests passed!"

@@ -1,6 +1,6 @@
 # Visual Representation of api front end to back end
 
-``` MAPPING
+````MAPPING
 Frontend (React)                   Backend (Express)                 Database (MongoDB)
     |                                   |                                  |
     |-- User clicks "Register" -->      |                                  |
@@ -28,3 +28,4 @@ Frontend (React)                   Backend (Express)                 Database (M
     |<- New item data --------------    |<- Saved item data ------         |
     |-- Display updated item list       |                                  |
     ```
+````

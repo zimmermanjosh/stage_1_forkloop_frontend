@@ -265,8 +265,12 @@
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Mobile Responsiveness */
@@ -275,25 +279,25 @@
     grid-template-columns: 1fr;
     max-height: 250px;
   }
-  
+
   .search-input-container {
     flex-direction: column;
     gap: 8px;
   }
-  
+
   .search-button {
     width: 100%;
   }
-  
+
   .category-selector {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .preview-card {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .preview-image {
     width: 100px;
     height: 75px;

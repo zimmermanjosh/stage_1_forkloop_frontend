@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
-import { searchRecipes, parseRecipeSearchResults } from "../../utils/SpoonacularApi.jsx";
+import {
+  searchRecipes,
+  parseRecipeSearchResults,
+} from "../../utils/SpoonacularApi.jsx";
 import logger from "../../utils/logger.jsx";
 import "./AddRecipeModal.css";
 
@@ -39,25 +42,25 @@ const AddRecipeModal = ({ handleCloseModal, onAddRecipe, isOpen }) => {
 
     setLoading(true);
     setError("");
-    
+
     try {
       logger("Searching for recipes:", searchQuery);
       const data = await searchRecipes(searchQuery, {
         number: 6,
         type: category,
-        addRecipeInformation: true
+        addRecipeInformation: true,
       });
-      
+
       const recipes = parseRecipeSearchResults(data);
       setSearchResults(recipes);
-      
+
       if (recipes.length === 0) {
         setError("No recipes found. Try a different search term.");
       }
     } catch (err) {
       logger("Search error:", err);
       setError("Failed to search recipes. Using fallback data.");
-      
+
       // Fallback to mock data if API fails
       const mockRecipes = [
         {
@@ -68,7 +71,7 @@ const AddRecipeModal = ({ handleCloseModal, onAddRecipe, isOpen }) => {
           cookingTime: 30,
           difficulty: "easy",
           servings: 4,
-          spoonacularScore: 85
+          spoonacularScore: 85,
         },
         {
           _id: Date.now() + 2,
@@ -78,12 +81,12 @@ const AddRecipeModal = ({ handleCloseModal, onAddRecipe, isOpen }) => {
           cookingTime: 45,
           difficulty: "medium",
           servings: 6,
-          spoonacularScore: 92
-        }
+          spoonacularScore: 92,
+        },
       ];
       setSearchResults(mockRecipes);
     }
-    
+
     setLoading(false);
   };
 
@@ -94,7 +97,7 @@ const AddRecipeModal = ({ handleCloseModal, onAddRecipe, isOpen }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     if (!selectedRecipe) {
       setError("Please select a recipe to add");
       return;
@@ -106,11 +109,11 @@ const AddRecipeModal = ({ handleCloseModal, onAddRecipe, isOpen }) => {
       category: category,
       // Add user ownership for the saved recipe
       owner: "current_user", // This should be replaced with actual user ID
-      liked: false
+      liked: false,
     };
 
     onAddRecipe(recipeToAdd);
-    
+
     // Reset form
     setSearchQuery("");
     setSearchResults([]);
@@ -142,8 +145,8 @@ const AddRecipeModal = ({ handleCloseModal, onAddRecipe, isOpen }) => {
                 minLength={2}
                 maxLength={50}
               />
-              <button 
-                type="button" 
+              <button
+                type="button"
                 onClick={handleSearch}
                 className="search-button"
                 disabled={loading || !searchQuery.trim()}
@@ -178,11 +181,7 @@ const AddRecipeModal = ({ handleCloseModal, onAddRecipe, isOpen }) => {
         </div>
 
         {/* Error Display */}
-        {error && (
-          <div className="error-message">
-            {error}
-          </div>
-        )}
+        {error && <div className="error-message">{error}</div>}
 
         {/* Search Results */}
         {searchResults.length > 0 && (
@@ -195,18 +194,21 @@ const AddRecipeModal = ({ handleCloseModal, onAddRecipe, isOpen }) => {
                   className={`recipe-card ${selectedRecipe?._id === recipe._id ? "selected" : ""}`}
                   onClick={() => handleRecipeSelect(recipe)}
                 >
-                  <img 
-                    src={recipe.image} 
+                  <img
+                    src={recipe.image}
                     alt={recipe.title}
                     className="recipe-image"
                     onError={(e) => {
-                      e.target.src = "https://via.placeholder.com/200x150/ff6b35/ffffff?text=No+Image";
+                      e.target.src =
+                        "https://via.placeholder.com/200x150/ff6b35/ffffff?text=No+Image";
                     }}
                   />
                   <div className="recipe-info">
                     <h5 className="recipe-title">{recipe.title}</h5>
                     <div className="recipe-meta">
-                      <span className="cooking-time">⏱️ {recipe.cookingTime}min</span>
+                      <span className="cooking-time">
+                        ⏱️ {recipe.cookingTime}min
+                      </span>
                       <span className="difficulty">🔥 {recipe.difficulty}</span>
                       <span className="servings">👥 {recipe.servings}</span>
                     </div>
@@ -230,16 +232,23 @@ const AddRecipeModal = ({ handleCloseModal, onAddRecipe, isOpen }) => {
           <div className="selected-recipe-preview">
             <h4>Selected Recipe:</h4>
             <div className="preview-card">
-              <img 
-                src={selectedRecipe.image} 
+              <img
+                src={selectedRecipe.image}
                 alt={selectedRecipe.title}
                 className="preview-image"
               />
               <div className="preview-info">
                 <h5>{selectedRecipe.title}</h5>
-                <p>Category: <strong>{category}</strong></p>
-                <p>Cooking Time: <strong>{selectedRecipe.cookingTime} minutes</strong></p>
-                <p>Difficulty: <strong>{selectedRecipe.difficulty}</strong></p>
+                <p>
+                  Category: <strong>{category}</strong>
+                </p>
+                <p>
+                  Cooking Time:{" "}
+                  <strong>{selectedRecipe.cookingTime} minutes</strong>
+                </p>
+                <p>
+                  Difficulty: <strong>{selectedRecipe.difficulty}</strong>
+                </p>
               </div>
             </div>
           </div>
