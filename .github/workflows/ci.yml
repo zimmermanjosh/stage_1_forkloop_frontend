@@ -205,12 +205,21 @@ jobs:
         run: npm audit --audit-level=moderate
         continue-on-error: true
 
-      - name: Check for secrets
+      # Only run TruffleHog with base/head on pull requests
+      - name: Check for secrets (PR only)
+        if: github.event_name == 'pull_request'
         uses: trufflesecurity/trufflehog@main
         with:
           path: ./
-          base: main
-          head: HEAD
+          base: ${{ github.event.pull_request.base.sha }}
+          head: ${{ github.event.pull_request.head.sha }}
+
+      # For pushes, scan the current HEAD
+      - name: Check for secrets (push only)
+        if: github.event_name == 'push'
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: ./
 
   # Deploy to GitHub Pages (on main branch)
   deploy-gh-pages:
