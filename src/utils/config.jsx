@@ -597,7 +597,6 @@ export const defaultRecipes = [
   },
 ];
 
-
 export const categoryFilters = {
   breakfast: "breakfast",
   lunch: "lunch",
