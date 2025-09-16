@@ -94,7 +94,7 @@
   line-height: 1.2;
 }
 
-.modal__weather-type {
+.modal__recipe-category {
   font-family: var(--font-family);
   font-size: 16px;
   font-weight: 500;
