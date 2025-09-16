@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "type": "module",
   "private": true,
-  "homepage": "https://testwtwr.jumpingcrab.com",
+  "homepage": "https://zimmermanjosh.github.io/stage_1_forkloop_frontend",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
