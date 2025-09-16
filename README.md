@@ -235,8 +235,8 @@ For local development with mock data:
 ### Development Milestones
 
 - **Week 1:** ✅ Foundation & branding transformation
-- **Week 2:** 🔄 Core recipe components & Spoonacular integration
-- **Week 3:** 📋 Advanced filtering & user preferences
+- **Week 2:** ✅ Core recipe components & Spoonacular integration
+- **Week 3:** XX Advanced filtering & user preferences
 - **Week 4:** 📋 Polish, responsive design, deployment
 
 ### Success Metrics
@@ -249,6 +249,6 @@ For local development with mock data:
 
 ### Repository Resources
 
-- **Frontend**: [https://github.com/zimmermanjosh/se_project_react]
-- **Backend** (Stage 2): [https://github.com/zimmermanjosh/se_project_express]
+- **Frontend**: [https://github.com/zimmermanjosh/stage_1_forkloop_frontend]
+- **Backend** (Stage 2): [https://github.com/zimmermanjosh/stage_2_forkloop_backend]
 - **Live Demo**: https://zimmermanjosh.github.io/stage_1_forkloop_frontend
