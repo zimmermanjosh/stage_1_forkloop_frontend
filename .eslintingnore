@@ -1,0 +1,69 @@
+# Build outputs and generated files
+dist/
+build/
+*.tsbuildinfo
+
+# Vite build assets (with hash patterns)
+dist/assets/*.js
+dist/assets/*.css
+dist/assets/*.svg
+dist/assets/*.png
+dist/assets/*.jpg
+dist/assets/*.jpeg
+dist/assets/*.gif
+dist/assets/*.woff
+dist/assets/*.woff2
+dist/assets/*.ttf
+dist/assets/*.eot
+
+# Common generated patterns
+**/*-*.js
+**/*-*.css
+**/index-*.js
+**/index-*.css
+
+# Dependencies and caches
+node_modules/
+.npm/
+.yarn/
+.pnp/
+.pnp.js
+coverage/
+.nyc_output/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# IDE and OS files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Test artifacts
+coverage/
+.nyc_output/
+junit.xml
+
+# Temporary files
+*.tmp
+*.temp
+
+# Generated documentation
+docs/build/
+storybook-static/
