@@ -1,14 +1,7 @@
 import SideBar from "../SideBar/SideBar.jsx";
 import "./Profile.css";
 
-const Profile = ({
-  onSelectedCard,
-  onCreateModal,
-  onEditProfile,
-  onSignOut,
-  cards,
-  onCardLike,
-}) => {
+const Profile = ({ onEditProfile, onSignOut }) => {
   console.log("!!Profile");
   return (
     <div className="profile">
