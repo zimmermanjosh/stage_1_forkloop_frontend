@@ -1,5 +1,4 @@
 import SideBar from "../SideBar/SideBar.jsx";
-import ClothesSection from "../ClothesSection/ClothesSection.jsx";
 import "./Profile.css";
 
 const Profile = ({
@@ -16,13 +15,11 @@ const Profile = ({
       <section className="profile__sidebar">
         <SideBar onEditProfile={onEditProfile} onSignOut={onSignOut} />
       </section>
-      <section className="profile__clothes">
-        <ClothesSection
-          cards={cards}
-          onSelectedCard={onSelectedCard}
-          handleCreateModal={onCreateModal}
-          onCardLike={onCardLike}
-        />
+      <section className="profile__recipes">
+        <div className="profile__content">
+          <h2>Your Recipe Collection</h2>
+          <p>Your saved recipes will appear here once you add some!</p>
+        </div>
       </section>
     </div>
   );

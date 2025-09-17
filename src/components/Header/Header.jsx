@@ -1,5 +1,4 @@
 import "./Header.css";
-import DateTime from "../DateTime/DateTime.jsx";
 import logoImage from "../../images/dashboard/FL89x40.svg";
 import logger from "../../utils/logger.jsx";
 import { Link } from "react-router-dom";
@@ -38,9 +37,6 @@ const Header = ({
               className="header__logo-image"
             ></img>
           </Link>
-        </div>
-        <div>
-          <DateTime />
         </div>
       </div>
 

@@ -636,5 +636,5 @@ export const testUser = {
 
 export const BASE_URL =
   import.meta.env.MODE === "production"
-    ? "https://api.testwtwr.jumpingcrab.com"
+    ? "https://api.forkloop.jumpingcrab.com"
     : "http://localhost:3001";
