@@ -154,11 +154,27 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser
 
 ForkLoop includes comprehensive testing components for API and authentication validation:
 
-### Test Routes
+### Test Routes (Development Only)
+
+**Access these routes after running `npm start`:**
 
 - **Full Test Dashboard**: [http://localhost:3000/tests](http://localhost:3000/tests)
+  - Complete testing suite with all functionality
+  - Real-time API connection testing
+  - Authentication flow validation
+  - Visual feedback and detailed results
+
 - **API Tests Only**: [http://localhost:3000/api-test](http://localhost:3000/api-test)
+  - Spoonacular API integration testing
+  - Recipe search, random recipes, details
+  - Connection and response validation
+
 - **Auth Tests Only**: [http://localhost:3000/auth-test](http://localhost:3000/auth-test)
+  - User registration and login testing
+  - JWT token validation
+  - Profile management testing
+
+**Note**: These test routes are built into the application for development purposes and provide interactive testing without needing external testing frameworks.
 
 ### Browser Console Testing
 
@@ -206,11 +222,33 @@ window.testAPI.runAllTests();
 
 ### Development Benefits
 
-- Validate API integration before deployment
-- Test authentication flows thoroughly
-- Debug connection issues quickly
-- Verify data parsing accuracy
-- Ensure error handling works correctly
+- **Live Testing**: Interactive components for immediate feedback
+- **API Validation**: Test Spoonacular integration before deployment
+- **Auth Flow Testing**: Complete user registration/login verification
+- **Debug Tools**: Quick connection and error diagnosis
+- **Data Verification**: Inspect parsed API responses in real-time
+- **Error Handling**: Verify fallback mechanisms work correctly
+
+### Test Component Files
+
+The testing infrastructure is built into these components:
+
+```
+src/components/
+├── TestDashboard/     # Main testing hub (/tests route)
+├── ApiTest/          # Spoonacular API testing (/api-test route)
+├── AuthTest/         # Authentication testing (/auth-test route)
+├── AddRecipeDemo/    # Interactive recipe adding demo
+└── MockAuthDemo/     # Mock authentication examples
+```
+
+### Using the Test Suite
+
+1. **Start Development Server**: `npm start`
+2. **Navigate to Test Routes**: Use URLs above or click links in the app
+3. **Interactive Testing**: Click buttons to run specific tests
+4. **Console Integration**: Use `window.testAPI` functions for scripted testing
+5. **Real-time Results**: View immediate feedback and detailed responses
 
 ### Setup Spoonacular API
 

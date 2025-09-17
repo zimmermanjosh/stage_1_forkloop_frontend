@@ -49,7 +49,7 @@
     "nvm_use": "chmod +x scripts/build.sh && scripts/build.sh",
     "predeploy": "npm run build",
     "github:deploy": "gh-pages -d dist",
-    "deploy": "npm run build && scp -r ./dist/* zimemrman_joshua@testwtwr.jumpingcrab.com:~/frontend"
+    "deploy": "npm run build && scp -r ./dist/* zimemrman_joshua@forkloop.jumpingcrab.com:~/frontend"
   },
   "browserslist": {
     "production": [
