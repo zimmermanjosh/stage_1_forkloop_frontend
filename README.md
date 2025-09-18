@@ -290,3 +290,7 @@ For local development with mock data:
 - **Frontend**: [https://github.com/zimmermanjosh/stage_1_forkloop_frontend]
 - **Backend** (Stage 2): [https://github.com/zimmermanjosh/stage_2_forkloop_backend]
 - **Live Demo**: https://zimmermanjosh.github.io/stage_1_forkloop_frontend
+
+### Resubmission 
+
+- **checkout**: [new branch update PR - stage-1-frontend-and-api] 
