@@ -82,18 +82,25 @@ jobs:
         run: npm ci
 
       - name: Start development server
-        run: npm run dev &
+        run: |
+          echo "🚀 Starting development server..."
+          npm run dev:ci &
+          SERVER_PID=$!
+          echo "Server PID: $SERVER_PID"
+          sleep 10
         env:
           NODE_ENV: test
+          CI: true
 
-      - name: Wait for server
-        run: npx wait-on http://localhost:3000 --timeout 60000
-
-      - name: Test server is responding
+      - name: Wait for server and test
         run: |
-          sleep 5
-          curl -f http://localhost:3000/stage_1_forkloop_frontend/ || {
-            echo "❌ Server not responding"
+          echo "⏳ Waiting for server to be ready..."
+          # Try to wait for server with timeout
+          timeout 120 bash -c 'until curl -f http://localhost:3000/stage_1_forkloop_frontend/ > /dev/null 2>&1; do sleep 2; echo "Waiting..."; done' || {
+            echo "❌ Server failed to start within timeout"
+            echo "Checking if any process is running on port 3000..."
+            netstat -tulpn | grep :3000 || echo "No process found on port 3000"
+            ps aux | grep node || echo "No node processes found"
             exit 1
           }
           echo "✅ Server is responding"
@@ -118,42 +125,39 @@ jobs:
         run: npm ci
 
       - name: Start development server
-        run: npm run dev &
+        run: |
+          echo "🚀 Starting development server..."
+          npm run dev:ci &
+          SERVER_PID=$!
+          echo "Server PID: $SERVER_PID"
+          sleep 10
         env:
           NODE_ENV: test
+          CI: true
 
-      - name: Wait for server
-        run: npx wait-on http://localhost:3000 --timeout 60000
-
-      - name: Basic component smoke tests
+      - name: Component smoke tests
         run: |
-          sleep 5
-          echo "🏠 Testing main app..."
-          curl -f http://localhost:3000/stage_1_forkloop_frontend/ || {
-            echo "❌ Main app not responding"
+          echo "⏳ Waiting for server to be ready..."
+          # Wait for server with timeout
+          timeout 120 bash -c 'until curl -f http://localhost:3000/stage_1_forkloop_frontend/ > /dev/null 2>&1; do sleep 2; echo "Waiting..."; done' || {
+            echo "❌ Server failed to start within timeout"
             exit 1
           }
+
+          echo "🏠 Testing main app..."
+          curl -f http://localhost:3000/stage_1_forkloop_frontend/ > /dev/null
           echo "✅ Main app is responding"
 
           echo "🧪 Testing API test page..."
-          curl -f http://localhost:3000/stage_1_forkloop_frontend/api-test || {
-            echo "❌ API test page not responding"
-            exit 1
-          }
+          curl -f http://localhost:3000/stage_1_forkloop_frontend/api-test > /dev/null
           echo "✅ API test page is responding"
 
           echo "🔐 Testing auth test page..."
-          curl -f http://localhost:3000/stage_1_forkloop_frontend/auth-test || {
-            echo "❌ Auth test page not responding"
-            exit 1
-          }
+          curl -f http://localhost:3000/stage_1_forkloop_frontend/auth-test > /dev/null
           echo "✅ Auth test page is responding"
 
           echo "📊 Testing test dashboard..."
-          curl -f http://localhost:3000/stage_1_forkloop_frontend/tests || {
-            echo "❌ Test dashboard not responding"
-            exit 1
-          }
+          curl -f http://localhost:3000/stage_1_forkloop_frontend/tests > /dev/null
           echo "✅ Test dashboard is responding"
 
   # Security Audit
