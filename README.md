@@ -146,10 +146,49 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser
 
 **Use these credentials to test Save Recipe and Authentication features:**
 
+**Test User 1:**
 ```
 Email: jtest@test.com
 Password: test123456
 ```
+
+**Test User 2:**
+```
+Username: testuser
+Email: testuser@test.com
+Password: password123456
+```
+
+### **🎯 How to Test Authentication & Save Features**
+
+**Step-by-step testing guide:**
+
+1. **Visit the Live Site:** [https://zimmermanjosh.github.io/stage_1_forkloop_frontend](https://zimmermanjosh.github.io/stage_1_forkloop_frontend)
+
+2. **Login Process:**
+   - Click "Log in" button in the header
+   - Use either test account credentials above
+   - The login modal shows both test accounts for convenience
+   - Click "Log in" to authenticate
+
+3. **Test Save Recipe Functionality:**
+   - Search for recipes using the search bar
+   - Click on any recipe card to view details
+   - Click "💾 Save Recipe" button in the recipe modal
+   - Recipe will be added to your personal collection
+
+4. **Test User-Specific Data:**
+   - Login with User 1, save some recipes
+   - Logout and login with User 2, save different recipes
+   - Each user maintains separate recipe collections
+   - Verify recipes are user-specific
+
+5. **Test Profile Management:**
+   - Click your avatar in the header when logged in
+   - Update your name and avatar URL
+   - Changes persist for that user session
+
+**Note:** Mock authentication is enabled for GitHub Pages deployment, so all features work without a backend server.
 
 **Features Available:**
 - ✅ Recipe search and discovery

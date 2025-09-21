@@ -14,6 +14,13 @@ const users = [
     ...testUser,
     _id: "test_user_12345",
   },
+  {
+    _id: "test_user_67890",
+    name: "testuser",
+    email: "testuser@test.com",
+    password: "password123456",
+    avatar: "https://i.pravatar.cc/300?img=50",
+  },
 ];
 
 // Mock register function

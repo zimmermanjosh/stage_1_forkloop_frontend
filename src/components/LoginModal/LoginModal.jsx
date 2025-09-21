@@ -74,9 +74,9 @@ const LoginModal = ({
             >
               <strong>🔐 For Review Testing:</strong>
               <br />
-              Email: jtest@test.com
+              <strong>User 1:</strong> jtest@test.com / test123456
               <br />
-              Password: test123456
+              <strong>User 2:</strong> testuser@test.com / password123456
             </p>
           </div>
 
