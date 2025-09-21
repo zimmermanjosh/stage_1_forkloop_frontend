@@ -4,27 +4,27 @@
   font-weight: 700;
 }
 
-/* Search and filter section */
-.search__section {
+/* Search block */
+.search {
   text-align: center;
   margin: 40px 0;
 }
 
-.search__section h1 {
+.search__title {
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 24px;
 }
 
-.category-filters {
+.search__filters {
   display: flex;
   gap: 12px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.category-btn {
+.search__filter-btn {
   background: var(--background-light);
   border: 2px solid var(--border-light);
   color: var(--text-secondary);
@@ -36,41 +36,41 @@
   transition: all 0.2s;
 }
 
-.category-btn:hover {
+.search__filter-btn:hover {
   background: var(--background-white);
   border-color: var(--border-medium);
   color: var(--text-primary);
 }
 
-.category-btn--active {
+.search__filter-btn--active {
   background: var(--primary-color);
   border-color: var(--primary-color);
   color: white;
 }
 
-.category-btn--active:hover {
+.search__filter-btn--active:hover {
   background: var(--primary-hover);
   border-color: var(--primary-hover);
 }
 
-/* Section headers */
-.section-header {
+/* Cards block */
+.cards {
+  margin-top: 20px;
+}
+
+.cards__header {
   text-align: center;
   margin: 32px 0 24px;
 }
 
-.section-header h2 {
+.cards__title {
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--text-primary);
   margin: 0;
 }
 
-.card__section {
-  margin-top: 20px;
-}
-
-.card__items {
+.cards__list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -84,16 +84,16 @@
     padding: 0 10px;
   }
 
-  .search__section h1 {
+  .search__title {
     font-size: 1.8rem;
   }
 
-  .category-btn {
+  .search__filter-btn {
     padding: 8px 16px;
     font-size: 14px;
   }
 
-  .card__items {
+  .cards__list {
     gap: 10px;
   }
 }

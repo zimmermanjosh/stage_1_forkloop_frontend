@@ -19,13 +19,13 @@
 }
 
 .card__image {
-  width: 328px;
-  height: 328px;
+  width: 100%;
+  max-width: 328px;
+  height: auto;
+  aspect-ratio: 1 / 1;
   border-radius: 10px;
   cursor: pointer;
-
-  object-fit: contain;
-
+  object-fit: cover;
   box-sizing: border-box;
 }
 
@@ -43,18 +43,19 @@
     transform 0.2s,
     box-shadow 0.2s;
   max-width: 320px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Critical 320px responsive requirement */
 @media (max-width: 320px) {
   .recipe-card {
-    max-width: 300px;
+    max-width: 100%;
     margin: 0 auto;
   }
 
   .card__image {
-    width: 280px;
-    height: 280px;
+    max-width: 100%;
   }
 }
 

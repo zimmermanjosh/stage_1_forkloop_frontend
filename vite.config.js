@@ -7,7 +7,9 @@ export default defineConfig({
   base: "/stage_1_forkloop_frontend/",
   server: {
     port: 3000,
-    open: true,
+    host: true, // Allow external connections
+    open: !process.env.CI, // Don't open browser in CI
+    strictPort: true, // Fail if port is already in use
   },
   build: {
     outDir: "dist",

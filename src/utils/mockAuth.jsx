@@ -14,6 +14,13 @@ const users = [
     ...testUser,
     _id: "test_user_12345",
   },
+  {
+    _id: "test_user_67890",
+    name: "testuser",
+    email: "testuser@test.com",
+    password: "password123456",
+    avatar: "https://i.pravatar.cc/300?img=50",
+  },
 ];
 
 // Mock register function
@@ -106,8 +113,11 @@ export const mockUpdateUserProfile = async (name, avatar) => {
 
 // Check if we should use mock auth (development mode without backend)
 export const shouldUseMockAuth = () => {
+  // Enable mock auth for both development and GitHub Pages deployment for reviewers
   return (
-    import.meta.env.MODE === "development" &&
-    window.location.hostname === "localhost"
+    (import.meta.env.MODE === "development" &&
+      window.location.hostname === "localhost") ||
+    (import.meta.env.MODE === "production" &&
+      window.location.hostname === "zimmermanjosh.github.io")
   );
 };

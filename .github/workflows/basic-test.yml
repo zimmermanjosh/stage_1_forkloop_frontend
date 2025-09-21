@@ -2,9 +2,9 @@ name: Basic Testing
 
 on:
   push:
-    branches: [main, develop]
+    branches: [main, develop, "jz/*"]
   pull_request:
-    branches: [main]
+    branches: [main, develop]
 
 jobs:
   basic-checks:
@@ -50,17 +50,17 @@ jobs:
           SERVER_PID=$!
 
           # Wait for server
-          sleep 10
+          sleep 15
 
           # Test if server responds
           curl -f http://localhost:4173 || {
             echo "❌ Server not responding"
-            kill $SERVER_PID
+            kill $SERVER_PID 2>/dev/null || true
             exit 1
           }
 
           echo "✅ Server is responding"
-          kill $SERVER_PID
+          kill $SERVER_PID 2>/dev/null || true
 
       - name: Report success
         run: |

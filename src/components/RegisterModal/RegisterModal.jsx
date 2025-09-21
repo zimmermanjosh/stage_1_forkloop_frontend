@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./RegisterModal.css";
 
 const RegisterModal = ({
@@ -18,10 +18,34 @@ const RegisterModal = ({
     onRegister({ name, avatar, email, password });
   };
 
+  // Handle ESC key press
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("keydown", handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isOpen, onClose]);
+
+  // Handle overlay click
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
-    <div className="register-modal">
+    <div className="register-modal" onClick={handleOverlayClick}>
       <div className="register-modal__content">
         {/* Close button */}
         <button

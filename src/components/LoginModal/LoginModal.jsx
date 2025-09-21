@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./LoginModal.css";
 
 const LoginModal = ({
@@ -17,13 +17,37 @@ const LoginModal = ({
     onLogin({ email, password });
   };
 
+  // Handle ESC key press
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("keydown", handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isOpen, onClose]);
+
+  // Handle overlay click
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   if (!isOpen) return null;
 
   // Check if form is filled to determine button color
   const isFormFilled = email.trim() && password.trim();
 
   return (
-    <div className="login-modal">
+    <div className="login-modal" onClick={handleOverlayClick}>
       <div className="login-modal__content">
         {/* Close button */}
         <button
@@ -36,6 +60,25 @@ const LoginModal = ({
 
         <div className="login-modal__body">
           <h2 className="login-modal__title">Log in</h2>
+
+          {/* Test credentials banner for reviewers */}
+          <div className="login-modal__test-credentials">
+            <p
+              style={{
+                background: "#e8f5e8",
+                padding: "8px",
+                borderRadius: "4px",
+                fontSize: "14px",
+                margin: "0 0 16px 0",
+              }}
+            >
+              <strong>🔐 For Review Testing:</strong>
+              <br />
+              <strong>User 1:</strong> jtest@test.com / test123456
+              <br />
+              <strong>User 2:</strong> testuser@test.com / password123456
+            </p>
+          </div>
 
           <form onSubmit={handleSubmit} className="login-modal__form">
             {/* Email field */}

@@ -1,11 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./ConfirmDeleteModal.css";
 
 const ConfirmDeleteModal = ({ isOpen, onClose, onConfirm, itemName }) => {
+  // Handle ESC key press
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("keydown", handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isOpen, onClose]);
+
+  // Handle overlay click
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
-    <div className="confirm-modal">
+    <div className="confirm-modal" onClick={handleOverlayClick}>
       <div className="confirm-modal__content">
         <button
           type="button"
