@@ -57,19 +57,13 @@ const TestDashboard = () => {
         <h3>📚 Available Test Routes:</h3>
         <ul>
           <li>
-            <Link to="/api-test">
-              📡 API Tests Only
-            </Link>
+            <Link to="/api-test">📡 API Tests Only</Link>
           </li>
           <li>
-            <Link to="/auth-test">
-              🔐 Auth Tests Only
-            </Link>
+            <Link to="/auth-test">🔐 Auth Tests Only</Link>
           </li>
           <li>
-            <Link to="/tests">
-              🎛️ Full Test Dashboard
-            </Link>
+            <Link to="/tests">🎛️ Full Test Dashboard</Link>
           </li>
         </ul>
 

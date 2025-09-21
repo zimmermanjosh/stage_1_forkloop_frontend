@@ -39,9 +39,19 @@ const LoginModal = ({
 
           {/* Test credentials banner for reviewers */}
           <div className="login-modal__test-credentials">
-            <p style={{background: '#e8f5e8', padding: '8px', borderRadius: '4px', fontSize: '14px', margin: '0 0 16px 0'}}>
-              <strong>🔐 For Review Testing:</strong><br/>
-              Email: jtest@test.com<br/>
+            <p
+              style={{
+                background: "#e8f5e8",
+                padding: "8px",
+                borderRadius: "4px",
+                fontSize: "14px",
+                margin: "0 0 16px 0",
+              }}
+            >
+              <strong>🔐 For Review Testing:</strong>
+              <br />
+              Email: jtest@test.com
+              <br />
               Password: test123456
             </p>
           </div>
