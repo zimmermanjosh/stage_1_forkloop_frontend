@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./LoginModal.css";
 
 const LoginModal = ({
@@ -17,13 +17,37 @@ const LoginModal = ({
     onLogin({ email, password });
   };
 
+  // Handle ESC key press
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("keydown", handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isOpen, onClose]);
+
+  // Handle overlay click
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   if (!isOpen) return null;
 
   // Check if form is filled to determine button color
   const isFormFilled = email.trim() && password.trim();
 
   return (
-    <div className="login-modal">
+    <div className="login-modal" onClick={handleOverlayClick}>
       <div className="login-modal__content">
         {/* Close button */}
         <button

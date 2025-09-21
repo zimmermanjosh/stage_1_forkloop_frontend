@@ -1,6 +1,6 @@
 import "./itemModal.css";
 import logger from "../../utils/logger.jsx";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext.jsx";
 
 const RecipeModal = ({ selectedCard, onClose, onCardDelete, isLoggedIn }) => {
@@ -30,8 +30,30 @@ const RecipeModal = ({ selectedCard, onClose, onCardDelete, isLoggedIn }) => {
     ? recipe.summary.replace(/<[^>]*>/g, "").slice(0, 300) + "..."
     : "No description available.";
 
+  // Handle ESC key press
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [onClose]);
+
+  // Handle overlay click
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="modal">
+    <div className="modal" onClick={handleOverlayClick}>
       <div className="modal__content recipe-modal__content">
         <button
           type="button"
