@@ -157,6 +157,7 @@ Password: test123456
 Username: testuser
 Email: testuser@test.com
 Password: password123456
+Avatar: https://i.pravatar.cc/300?img=50
 ```
 
 ### **🎯 How to Test Authentication & Save Features**
