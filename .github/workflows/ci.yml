@@ -87,12 +87,12 @@ jobs:
           NODE_ENV: test
 
       - name: Wait for server
-        run: npx wait-on http://localhost:5173 --timeout 60000
+        run: npx wait-on http://localhost:3000 --timeout 60000
 
       - name: Test server is responding
         run: |
           sleep 5
-          curl -f http://localhost:5173 || {
+          curl -f http://localhost:3000/stage_1_forkloop_frontend/ || {
             echo "❌ Server not responding"
             exit 1
           }
@@ -123,31 +123,38 @@ jobs:
           NODE_ENV: test
 
       - name: Wait for server
-        run: npx wait-on http://localhost:5173 --timeout 60000
+        run: npx wait-on http://localhost:3000 --timeout 60000
 
       - name: Basic component smoke tests
         run: |
           sleep 5
           echo "🏠 Testing main app..."
-          curl -f http://localhost:5173 || {
+          curl -f http://localhost:3000/stage_1_forkloop_frontend/ || {
             echo "❌ Main app not responding"
             exit 1
           }
           echo "✅ Main app is responding"
 
           echo "🧪 Testing API test page..."
-          curl -f http://localhost:5173/api-test || {
+          curl -f http://localhost:3000/stage_1_forkloop_frontend/api-test || {
             echo "❌ API test page not responding"
             exit 1
           }
           echo "✅ API test page is responding"
 
           echo "🔐 Testing auth test page..."
-          curl -f http://localhost:5173/auth-test || {
+          curl -f http://localhost:3000/stage_1_forkloop_frontend/auth-test || {
             echo "❌ Auth test page not responding"
             exit 1
           }
           echo "✅ Auth test page is responding"
+
+          echo "📊 Testing test dashboard..."
+          curl -f http://localhost:3000/stage_1_forkloop_frontend/tests || {
+            echo "❌ Test dashboard not responding"
+            exit 1
+          }
+          echo "✅ Test dashboard is responding"
 
   # Security Audit
   security:
@@ -211,14 +218,12 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
-          PUBLIC_URL: /forkloop_frontend
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          cname: forkloop.example.com # Optional: replace with your domain
 
   # Notification
   notify:
