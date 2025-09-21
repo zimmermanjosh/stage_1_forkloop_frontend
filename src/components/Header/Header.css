@@ -20,7 +20,7 @@
   object-fit: contain;
 }
 
-.header__avatar-logo {
+.header__nav {
   display: flex;
   gap: 20px;
   align-items: center;

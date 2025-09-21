@@ -21,13 +21,13 @@ function Main({ recipes, onCardClick, selectedCategory, onCategoryChange }) {
 
   return (
     <main className="main">
-      <section className="search__section">
-        <h1>Discover Delicious Recipes</h1>
-        <div className="category-filters">
+      <section className="search">
+        <h1 className="search__title">Discover Delicious Recipes</h1>
+        <div className="search__filters">
           {["breakfast", "lunch", "dinner", "snack"].map((category) => (
             <button
               key={category}
-              className={`category-btn ${selectedCategory === category ? "category-btn--active" : ""}`}
+              className={`search__filter-btn ${selectedCategory === category ? "search__filter-btn--active" : ""}`}
               onClick={() => onCategoryChange(category)}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -36,9 +36,9 @@ function Main({ recipes, onCardClick, selectedCategory, onCategoryChange }) {
         </div>
       </section>
 
-      <section className="card__section" id="card-section">
-        <div className="section-header">
-          <h2>
+      <section className="cards" id="card-section">
+        <div className="cards__header">
+          <h2 className="cards__title">
             {selectedCategory.charAt(0).toUpperCase() +
               selectedCategory.slice(1)}{" "}
             Recipes
@@ -46,7 +46,7 @@ function Main({ recipes, onCardClick, selectedCategory, onCategoryChange }) {
           </h2>
         </div>
 
-        <div className="card__items">
+        <div className="cards__list">
           {filteredRecipes.length > 0 ? (
             filteredRecipes.map((recipe) => (
               <ItemCard

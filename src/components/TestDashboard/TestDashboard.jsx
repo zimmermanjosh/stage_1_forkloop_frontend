@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import ApiTest from "../ApiTest/ApiTest.jsx";
 import AuthTest from "../AuthTest/AuthTest.jsx";
 import MockAuthDemo from "../MockAuthDemo/MockAuthDemo.jsx";
@@ -56,19 +57,19 @@ const TestDashboard = () => {
         <h3>📚 Available Test Routes:</h3>
         <ul>
           <li>
-            <a href="/api-test" target="_blank">
+            <Link to="/api-test">
               📡 API Tests Only
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/auth-test" target="_blank">
+            <Link to="/auth-test">
               🔐 Auth Tests Only
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/tests" target="_blank">
+            <Link to="/tests">
               🎛️ Full Test Dashboard
-            </a>
+            </Link>
           </li>
         </ul>
 

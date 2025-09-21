@@ -106,8 +106,9 @@ export const mockUpdateUserProfile = async (name, avatar) => {
 
 // Check if we should use mock auth (development mode without backend)
 export const shouldUseMockAuth = () => {
+  // Enable mock auth for both development and GitHub Pages deployment for reviewers
   return (
-    import.meta.env.MODE === "development" &&
-    window.location.hostname === "localhost"
+    (import.meta.env.MODE === "development" && window.location.hostname === "localhost") ||
+    (import.meta.env.MODE === "production" && window.location.hostname === "zimmermanjosh.github.io")
   );
 };

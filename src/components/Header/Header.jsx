@@ -40,7 +40,7 @@ const Header = ({
         </div>
       </div>
 
-      <div className="header__avatar-logo">
+      <nav className="header__nav">
         {isLoggedIn ? (
           <>
             <div>
@@ -75,7 +75,7 @@ const Header = ({
             </button>
           </>
         )}
-      </div>
+      </nav>
     </header>
   );
 };

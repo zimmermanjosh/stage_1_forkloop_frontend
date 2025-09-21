@@ -142,9 +142,18 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser
 
 **🚀 Live Site**: [https://zimmermanjosh.github.io/stage_1_forkloop_frontend](https://zimmermanjosh.github.io/stage_1_forkloop_frontend)
 
+### **🔐 Test Credentials for Review**
+
+**Use these credentials to test Save Recipe and Authentication features:**
+
+```
+Email: jtest@test.com
+Password: test123456
+```
+
 **Features Available:**
 - ✅ Recipe search and discovery
-- ✅ Add/delete recipes functionality  
+- ✅ Add/delete recipes functionality
 - ✅ User authentication (register/login)
 - ✅ Personal recipe collections
 - ✅ Responsive design across devices

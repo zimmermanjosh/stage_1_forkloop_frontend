@@ -8,8 +8,8 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      <div>Developed by Joshua Zimmerman</div>
-      <div>© {date}</div>
+      <p>Developed by Joshua Zimmerman</p>
+      <p>© {date}</p>
     </footer>
   );
 };
