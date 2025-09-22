@@ -611,7 +611,7 @@ export const difficultyLevels = {
 };
 
 export const spoonacularAPIData = {
-  APIkey: "3be906ab8a71466797560feb01b42514", // Add your Spoonacular API key here
+  APIkey: import.meta.env.VITE_SPOONACULAR_API_KEY || "fallback_key_for_development",
   baseURL: "https://api.spoonacular.com",
   endpoints: {
     complexSearch: "/recipes/complexSearch",
@@ -636,5 +636,5 @@ export const testUser = {
 
 export const BASE_URL =
   import.meta.env.MODE === "production"
-    ? "https://api.forkloop.jumpingcrab.com"
-    : "http://localhost:3001";
+    ? import.meta.env.VITE_BASE_URL_PROD || "https://api.forkloop.jumpingcrab.com"
+    : import.meta.env.VITE_BASE_URL_DEV || "http://localhost:3001";

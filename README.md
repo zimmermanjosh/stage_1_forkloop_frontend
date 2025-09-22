@@ -126,6 +126,24 @@ then
 
 - type : `npm i || npm install`
 
+### Environment Setup
+
+1. **Copy environment template**:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. **Add your Spoonacular API key** to `.env`:
+   - Get a free API key from [Spoonacular](https://spoonacular.com/food-api)
+   - Replace `your_spoonacular_api_key_here` with your actual API key
+   - Free tier: 150 requests/day
+
+3. **Verify environment variables** are loaded:
+   ```bash
+   npm run dev:local
+   # Check browser console for API calls with your key
+   ```
+
 ## Run Commands
 
 ### Development
