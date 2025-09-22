@@ -61,25 +61,6 @@ const LoginModal = ({
         <div className="login-modal__body">
           <h2 className="login-modal__title">Log in</h2>
 
-          {/* Test credentials banner for reviewers */}
-          <div className="login-modal__test-credentials">
-            <p
-              style={{
-                background: "#e8f5e8",
-                padding: "8px",
-                borderRadius: "4px",
-                fontSize: "14px",
-                margin: "0 0 16px 0",
-              }}
-            >
-              <strong>🔐 For Review Testing:</strong>
-              <br />
-              <strong>User 1:</strong> jtest@test.com / test123456
-              <br />
-              <strong>User 2:</strong> testuser@test.com / password123456
-            </p>
-          </div>
-
           <form onSubmit={handleSubmit} className="login-modal__form">
             {/* Email field */}
             <div className="login-modal__field">

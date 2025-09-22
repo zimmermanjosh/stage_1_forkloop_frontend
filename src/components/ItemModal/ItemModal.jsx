@@ -3,7 +3,7 @@ import logger from "../../utils/logger.jsx";
 import { useContext, useEffect } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext.jsx";
 
-const RecipeModal = ({ selectedCard, onClose, onCardDelete, isLoggedIn }) => {
+const RecipeModal = ({ selectedCard, onClose, onCardDelete, onAddRecipe, isLoggedIn }) => {
   logger("RecipeModal");
   const currentUser = useContext(CurrentUserContext);
 
@@ -50,6 +50,32 @@ const RecipeModal = ({ selectedCard, onClose, onCardDelete, isLoggedIn }) => {
     if (e.target === e.currentTarget) {
       onClose();
     }
+  };
+
+  // Handle save recipe
+  const handleSaveRecipe = () => {
+    if (!isLoggedIn) {
+      alert("Please log in to save recipes.");
+      return;
+    }
+
+    if (!onAddRecipe) {
+      console.error("onAddRecipe function not provided");
+      return;
+    }
+
+    // Prepare recipe data for saving to user's profile
+    const recipeToAdd = {
+      ...recipe,
+      // Ensure the recipe has the current user as owner when saved
+      owner: currentUser?._id,
+      // Keep the category if it exists, otherwise default to dinner
+      category: recipe.category || "dinner",
+    };
+
+    console.log("💾 Saving recipe to profile:", recipeToAdd.title);
+    onAddRecipe(recipeToAdd);
+    onClose(); // Close modal after saving
   };
 
   return (
@@ -149,7 +175,7 @@ const RecipeModal = ({ selectedCard, onClose, onCardDelete, isLoggedIn }) => {
             )}
             <button
               className="recipe-modal__save-button"
-              onClick={() => console.log("Save recipe feature coming soon!")}
+              onClick={handleSaveRecipe}
             >
               💾 Save Recipe
             </button>

@@ -42,9 +42,21 @@ import version from "../../version.jsx";
 function App() {
   logger("App");
 
-  const [recipes, setRecipes] = useState([]);
+  // Smart default category based on time of day
+  const [selectedCategory, setSelectedCategory] = useState(() => {
+    const hour = new Date().getHours();
+    if (hour < 11) return "breakfast";
+    if (hour < 16) return "lunch";
+    return "dinner";
+  });
+
+  // Start with filtered default recipes for the selected category
+  const [recipes, setRecipes] = useState(() => {
+    const hour = new Date().getHours();
+    const initialCategory = hour < 11 ? "breakfast" : hour < 16 ? "lunch" : "dinner";
+    return defaultRecipes.filter(recipe => recipe.category === initialCategory);
+  });
   // const [searchQuery, setSearchQuery] = useState("chicken"); // TODO: implement search functionality
-  const [selectedCategory, setSelectedCategory] = useState("dinner");
   const [selectedRecipe, setSelectedRecipe] = useState({});
 
   const [activeModal, setActiveModal] = useState("");
@@ -54,21 +66,42 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingFresh, setIsLoadingFresh] = useState(false); // For smooth loading transitions
   const [itemToDelete, setItemToDelete] = useState(null);
   const history = useNavigate();
   const [loginError, setLoginError] = useState(false);
 
   useEffect(() => {
-    // Load initial recipes instead of weather
-    getRandomRecipes({ tags: selectedCategory, number: 12 })
+    // Immediately show default recipes for the selected category
+    const categoryDefaults = defaultRecipes.filter(recipe => recipe.category === selectedCategory);
+    setRecipes(categoryDefaults);
+
+    // Progressive enhancement: load fresh content in background
+    setIsLoadingFresh(true);
+
+    // Map our categories to valid Spoonacular tags
+    const spoonacularTags = {
+      breakfast: "breakfast",
+      lunch: "lunch",
+      dinner: "main course", // Spoonacular uses "main course" instead of "dinner"
+      snack: "snack"
+    };
+
+    const apiTag = spoonacularTags[selectedCategory] || selectedCategory;
+
+    getRandomRecipes({ tags: apiTag, number: 12 })
       .then(parseRandomRecipeResults)
       .then((recipeData) => {
-        setRecipes(recipeData);
+        // Only update if we got valid data
+        if (recipeData && recipeData.length > 0) {
+          setRecipes(recipeData);
+        }
+        setIsLoadingFresh(false);
       })
       .catch((error) => {
         console.error("Error loading recipes:", error);
-        // Fallback to default recipes from config
-        setRecipes(defaultRecipes);
+        // Keep default recipes on error - they're already set above
+        setIsLoadingFresh(false);
       });
   }, [selectedCategory]);
 
@@ -323,6 +356,7 @@ function App() {
                 onCardClick={handleSelectedCard}
                 selectedCategory={selectedCategory}
                 onCategoryChange={handleCategoryFilter}
+                isLoadingFresh={isLoadingFresh}
               />
             }
           />
@@ -360,6 +394,7 @@ function App() {
             selectedCard={selectedRecipe}
             onClose={handleCloseModal}
             onCardDelete={handleDeleteModal}
+            onAddRecipe={onAddItem}
             isOwn={selectedRecipe.owner === currentUser?._id}
             isLoggedIn={isLoggedIn}
             onCardLike={handleCardLike}
