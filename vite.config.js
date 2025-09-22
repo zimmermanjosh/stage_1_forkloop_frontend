@@ -4,7 +4,7 @@ import react from "@vitejs/plugin-react";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/stage_1_forkloop_frontend/",
+  base: process.env.NODE_ENV === "production" ? "/stage_1_forkloop_frontend/" : "/",
   server: {
     port: 3000,
     host: true, // Allow external connections

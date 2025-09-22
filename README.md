@@ -128,15 +128,30 @@ then
 
 ## Run Commands
 
-`npm run nvmSelect` - Selects nvm version and runs
+### Development
+- `npm run dev:local` - **Recommended for local development** - serves at `http://localhost:3000/`
+- `npm run dev` - Standard development (uses conditional base path)
+- `npm run dev:ci` - CI/GitHub Actions development server
+- `npm run start` - Alias for `npm run dev`
 
-`npm run build` - Build Production (Vite + React)
+### Production
+- `npm run build` - Build for production (includes GitHub Pages base path)
+- `npm run preview` - Preview production build locally
+- `npm run github:deploy` - Deploy to GitHub Pages
 
-`npm run clean` - Removes build artifacts '/node_modules' && '/build'
+### Utilities
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Fix ESLint issues automatically
+- `npm run clean` - Removes build artifacts '/node_modules' && '/build'
 
-`npm run start` - starts React App Interface
+### Local Development URLs
+- **Local Development**: [http://localhost:3000/](http://localhost:3000/) (use `npm run dev:local`)
+- **Production Preview**: [http://localhost:4173/](http://localhost:4173/) (use `npm run preview`)
 
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser
+### Base Path Configuration
+- **Local Development**: No base path (`/`)
+- **GitHub Pages**: Base path (`/stage_1_forkloop_frontend/`)
+- Automatically configured based on `NODE_ENV`
 
 ## Live Deployment
 
