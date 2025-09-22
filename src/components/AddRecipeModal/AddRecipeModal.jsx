@@ -172,12 +172,24 @@ const AddRecipeModal = ({ handleCloseModal, onAddRecipe, isOpen }) => {
       return;
     }
 
-    // Add the selected recipe with the chosen category
+    // Prepare recipe data for backend - remove Spoonacular _id and format properly
     const recipeToAdd = {
-      ...selectedRecipe,
+      title: selectedRecipe.title,
       category: category,
-      // Add user ownership for the saved recipe
-      owner: "current_user", // This should be replaced with actual user ID
+      image: selectedRecipe.image,
+      cookingTime: selectedRecipe.cookingTime,
+      difficulty: selectedRecipe.difficulty,
+      servings: selectedRecipe.servings,
+      summary: selectedRecipe.summary ? selectedRecipe.summary.substring(0, 1000) : undefined,
+      extendedIngredients: selectedRecipe.extendedIngredients,
+      dishTypes: selectedRecipe.dishTypes,
+      sourceUrl: selectedRecipe.sourceUrl,
+      spoonacularScore: selectedRecipe.spoonacularScore,
+      glutenFree: selectedRecipe.glutenFree,
+      dairyFree: selectedRecipe.dairyFree,
+      vegetarian: selectedRecipe.vegetarian,
+      vegan: selectedRecipe.vegan,
+      // Note: owner is set by backend from JWT token
     };
 
     onAddRecipe(recipeToAdd);

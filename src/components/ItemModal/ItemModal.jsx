@@ -64,16 +64,28 @@ const RecipeModal = ({ selectedCard, onClose, onCardDelete, onAddRecipe, isLogge
       return;
     }
 
-    // Prepare recipe data for saving to user's profile
+    // Prepare recipe data for backend - remove Spoonacular _id and format properly
     const recipeToAdd = {
-      ...recipe,
-      // Ensure the recipe has the current user as owner when saved
-      owner: currentUser?._id,
-      // Keep the category if it exists, otherwise default to dinner
+      title: recipe.title,
       category: recipe.category || "dinner",
+      image: recipe.image,
+      cookingTime: recipe.cookingTime,
+      difficulty: recipe.difficulty,
+      servings: recipe.servings,
+      summary: recipe.summary ? recipe.summary.substring(0, 1000) : undefined,
+      extendedIngredients: recipe.extendedIngredients,
+      dishTypes: recipe.dishTypes,
+      sourceUrl: recipe.sourceUrl,
+      spoonacularScore: recipe.spoonacularScore,
+      glutenFree: recipe.glutenFree,
+      dairyFree: recipe.dairyFree,
+      vegetarian: recipe.vegetarian,
+      vegan: recipe.vegan,
+      // Note: owner is set by backend from JWT token
     };
 
     console.log("💾 Saving recipe to profile:", recipeToAdd.title);
+    console.log("🔧 Recipe data being sent:", recipeToAdd);
     onAddRecipe(recipeToAdd);
     onClose(); // Close modal after saving
   };

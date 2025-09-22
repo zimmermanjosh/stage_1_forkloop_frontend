@@ -74,6 +74,7 @@ function App() {
   useEffect(() => {
     // Immediately show default recipes for the selected category
     const categoryDefaults = defaultRecipes.filter(recipe => recipe.category === selectedCategory);
+    console.log(`🔧 Loading ${selectedCategory} - Found ${categoryDefaults.length} default recipes`);
     setRecipes(categoryDefaults);
 
     // Progressive enhancement: load fresh content in background
@@ -88,18 +89,26 @@ function App() {
     };
 
     const apiTag = spoonacularTags[selectedCategory] || selectedCategory;
+    console.log(`🔧 API call for ${selectedCategory} using tag: "${apiTag}"`);
 
     getRandomRecipes({ tags: apiTag, number: 12 })
-      .then(parseRandomRecipeResults)
+      .then((data) => parseRandomRecipeResults(data, selectedCategory))
       .then((recipeData) => {
+        console.log(`🔧 API returned ${recipeData?.length || 0} recipes for ${selectedCategory}`);
+        console.log(`🔧 Recipe categories:`, recipeData?.map(r => `${r.title}: ${r.category}`));
+
         // Only update if we got valid data
         if (recipeData && recipeData.length > 0) {
           setRecipes(recipeData);
+          console.log(`🔧 Updated recipes state with ${recipeData.length} fresh recipes`);
+        } else {
+          console.log(`🔧 No valid data, keeping ${categoryDefaults.length} default recipes`);
         }
         setIsLoadingFresh(false);
       })
       .catch((error) => {
         console.error("Error loading recipes:", error);
+        console.log(`🔧 Error - keeping ${categoryDefaults.length} default recipes`);
         // Keep default recipes on error - they're already set above
         setIsLoadingFresh(false);
       });

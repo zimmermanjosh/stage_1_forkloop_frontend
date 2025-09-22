@@ -120,11 +120,15 @@ export const parseRecipeData = (spoonacularRecipe) => {
   const getCategory = (dishTypes = []) => {
     const types = dishTypes.join(" ").toLowerCase();
 
+    // Check specific categories with priority based on context
     if (types.includes("breakfast")) return "breakfast";
-    if (types.includes("lunch") || types.includes("side dish")) return "lunch";
-    if (types.includes("dinner") || types.includes("main course"))
-      return "dinner";
     if (types.includes("snack") || types.includes("appetizer")) return "snack";
+
+    // For main meals, check explicit mentions first
+    if (types.includes("lunch") && !types.includes("dinner")) return "lunch";
+    if (types.includes("dinner")) return "dinner";
+    if (types.includes("main course")) return "dinner";
+    if (types.includes("lunch") || types.includes("side dish")) return "lunch";
 
     return "dinner"; // default
   };
@@ -166,7 +170,7 @@ export const parseRecipeSearchResults = (data) => {
 };
 
 // Parse random recipes results
-export const parseRandomRecipeResults = (data) => {
+export const parseRandomRecipeResults = (data, intendedCategory = null) => {
   logger("Parsing random recipe results");
 
   if (!data.recipes || !Array.isArray(data.recipes)) {
@@ -174,7 +178,14 @@ export const parseRandomRecipeResults = (data) => {
     return [];
   }
 
-  return data.recipes.map(parseRecipeData);
+  return data.recipes.map(recipe => {
+    const parsedRecipe = parseRecipeData(recipe);
+    // Override category if intended category is specified
+    if (intendedCategory) {
+      parsedRecipe.category = intendedCategory;
+    }
+    return parsedRecipe;
+  });
 };
 
 /*
