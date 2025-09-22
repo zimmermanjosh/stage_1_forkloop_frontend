@@ -611,7 +611,7 @@ export const difficultyLevels = {
 };
 
 export const spoonacularAPIData = {
-  APIkey: " 3be906ab8a71466797560feb01b42514", // Add your Spoonacular API key here
+  APIkey: "3be906ab8a71466797560feb01b42514", // Add your Spoonacular API key here
   baseURL: "https://api.spoonacular.com",
   endpoints: {
     complexSearch: "/recipes/complexSearch",
