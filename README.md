@@ -343,3 +343,9 @@ For local development with mock data:
 ### Resubmission 
 
 - **checkout**: [new branch update PR - stage-1-frontend-and-api] 
+- **checkout**: [new branch update PR - stage-1-frontend-and-api_2]
+  - fixed github actions 
+  - updates as per nikolai
+  - updates to readme : 
+    - to allow for faked login and saving
+    - to have pre-determined user and pass
