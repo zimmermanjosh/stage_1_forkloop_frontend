@@ -19,7 +19,7 @@ export const register = ({ name, avatar, email, password }) => {
     return mockRegister({ name, avatar, email, password });
   }
 
-  return request(`${BASE_URL}/signup`, {
+  return request(`${BASE_URL}/api/signup`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ name, avatar, email, password }),
@@ -33,7 +33,7 @@ export const login = ({ email, password }) => {
     return mockLogin({ email, password });
   }
 
-  return request(`${BASE_URL}/signin`, {
+  return request(`${BASE_URL}/api/signin`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password }),
@@ -47,7 +47,7 @@ export const checkToken = (token) => {
     return mockCheckToken(token);
   }
 
-  return request(`${BASE_URL}/users/me`, {
+  return request(`${BASE_URL}/api/users/me`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -65,7 +65,7 @@ export const updateUserProfile = (name, avatar) => {
   }
 
   const token = localStorage.getItem("jwt");
-  return request(`${BASE_URL}/users/me`, {
+  return request(`${BASE_URL}/api/users/me`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",

@@ -25,13 +25,13 @@ export const getItems = () => {
     headers["Authorization"] = `Bearer ${token}`;
   }
 
-  return request(`${BASE_URL}/recipes`, { headers }).then((data) => data.data);
+  return request(`${BASE_URL}/api/recipes`, { headers }).then((data) => data.data);
 };
 
 // POST request with auth
 export const addItems = (data) => {
   const token = localStorage.getItem("jwt");
-  return request(`${BASE_URL}/recipes`, {
+  return request(`${BASE_URL}/api/recipes`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -46,10 +46,10 @@ export const deleteItems = (id) => {
   console.log("🔧 Frontend deleteItems called with:", id);
 
   const token = localStorage.getItem("jwt");
-  const fullUrl = `${BASE_URL}/recipes/${id}`;
+  const fullUrl = `${BASE_URL}/api/recipes/${id}`;
   console.log("🔧 Full delete URL:", fullUrl);
 
-  return request(`${BASE_URL}/recipes/${id}`, {
+  return request(`${BASE_URL}/api/recipes/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -61,7 +61,7 @@ export const deleteItems = (id) => {
 // Like an item
 export const addCardLike = (id) => {
   const token = localStorage.getItem("jwt");
-  return request(`${BASE_URL}/recipes/${id}/likes`, {
+  return request(`${BASE_URL}/api/recipes/${id}/likes`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -73,7 +73,7 @@ export const addCardLike = (id) => {
 // Remove like from item
 export const removeCardLike = (id) => {
   const token = localStorage.getItem("jwt");
-  return request(`${BASE_URL}/recipes/${id}/likes`, {
+  return request(`${BASE_URL}/api/recipes/${id}/likes`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
